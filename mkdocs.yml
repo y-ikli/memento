@@ -1,0 +1,18 @@
+site_name: Momentos Data Engineering
+theme:
+  name: material
+
+nav:
+  - Accueil: index.md
+  - Python:
+      - Memento Python: python/memento_python.md
+  - Git:
+      - Memento Git: git/memento_git.md
+  - Docker:
+      - Memento Docker: docker/memento_docker.md
+  - SQL:
+      - Memento SQL: sql/memento_sql.md
+  - TDD:
+      - Memento TDD: tdd/memento_tdd.md
+  - Clean Code:
+      - Memento Clean Code: clean_code/memento_clean_code.md
