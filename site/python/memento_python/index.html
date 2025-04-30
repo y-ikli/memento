@@ -629,106 +629,114 @@
                   
 
 
-<h1 id="memento-python">Memento Python</h1>
-<h1 id="advanced-python-core">Advanced Python Core</h1>
+<h1 id="memento-python">Memento Python<a class="headerlink" href="#memento-python" title="Permanent link">&para;</a></h1>
+<h1 id="advanced-python-core">Advanced Python Core<a class="headerlink" href="#advanced-python-core" title="Permanent link">&para;</a></h1>
 <p>This memento summarizes some native Python features with structured examples.</p>
-<h1 id="type-hints-static-checking">Type Hints &amp; Static Checking</h1>
+<h1 id="type-hints-static-checking">Type Hints &amp; Static Checking<a class="headerlink" href="#type-hints-static-checking" title="Permanent link">&para;</a></h1>
 <p>Type hints help document your code and catch bugs early. Combined with tools like <code>mypy</code>, they enable static analysis without running the code.</p>
-<h2 id="basic-type-hints">Basic Type Hints</h2>
-<pre><code class="language-python">def double(x: int) -&gt; int:
-    return x * 2
+<h2 id="basic-type-hints">Basic Type Hints<a class="headerlink" href="#basic-type-hints" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
 
-def greet(name: str) -&gt; str:
-    return f&quot;Hello, {name}&quot;
-</code></pre>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
 <hr />
-<h2 id="hints-for-collections">Hints for Collections</h2>
-<pre><code class="language-python">from typing import List, Dict
+<h2 id="hints-for-collections">Hints for Collections<a class="headerlink" href="#hints-for-collections" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
 
-def total(prices: List[float]) -&gt; float:
-    return sum(prices)
+<span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="n">prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
-def extract_ids(data: List[Dict[str, int]]) -&gt; List[int]:
-    return [row[&quot;id&quot;] for row in data]
-</code></pre>
-<ul>
-<li>In first example prices are a list of floats.</li>
-<li>In the second example, data is expected to be a list of dictionaries.Each dictionary maps strings to integers 
+<span class="k">def</span> <span class="nf">extract_ids</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</code></pre></div>
+- In first example prices are a list of floats.
+- In the second example, data is expected to be a list of dictionaries.Each dictionary maps strings to integers 
 This means you expect something like:
-<code>[{"id": 1}, {"id": 2}, {"id": 3}]</code></li>
-</ul>
+<code>[{"id": 1}, {"id": 2}, {"id": 3}]</code></p>
 <hr />
-<h2 id="optional-union-literal">Optional, Union, Literal</h2>
-<pre><code class="language-python">from typing import Optional, Union, Literal
+<h2 id="optional-union-literal">Optional, Union, Literal<a class="headerlink" href="#optional-union-literal" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Literal</span>
 
-def maybe_add(a: int, b: Optional[int]) -&gt; int:
-    return a + (b or 0)
-</code></pre>
-<p>???+ note "🔍 maybe_add explained"</p>
+<span class="k">def</span> <span class="nf">maybe_add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<details class="note" open="open">
+<summary>🔍 maybe_add explained</summary>
+</details>
 <ul>
 <li>b is optional, meaning it can be int or None (Optional[int])</li>
 <li>If b is None, use 0 instead</li>
 <li>If b is an integer (e.g., 5), use it</li>
 </ul>
-<pre><code class="language-python">def handle_event(type: Union[str, int]) -&gt; None:
-    print(type)
-</code></pre>
-<p>???+ note "🔍 handle_event explained"</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">handle_event</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+</code></pre></div>
+<details class="note" open="open">
+<summary>🔍 handle_event explained</summary>
+</details>
 <ul>
 <li>type can be a str or an int</li>
 <li>The function returns nothing (None)</li>
 </ul>
-<pre><code class="language-python">def status_color(status: Literal[&quot;ok&quot;, &quot;error&quot;, &quot;warning&quot;]) -&gt; str:
-    return {&quot;ok&quot;: &quot;green&quot;, &quot;error&quot;: &quot;red&quot;, &quot;warning&quot;: &quot;yellow&quot;}[status]
-</code></pre>
-<p>???+ note "🔍 status_color explained"
-- <code>status: Literal["ok", "error", "warning"]</code> restricts allowed values.
-- Helps prevent bugs by allowing only specific strings.
-- If you try another value, static checkers like <code>mypy</code> will raise an error.</p>
-<p>!!! attention "Type Hints Are Static Only"
-    Python does <strong>not enforce types at runtime</strong>.<br />
-    Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy</code> — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;warning&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ok&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;yellow&quot;</span><span class="p">}[</span><span class="n">status</span><span class="p">]</span>
+</code></pre></div>
+<details class="note" open="open">
+<summary>🔍 status_color explained</summary>
+</details>
+<ul>
+<li><code>status: Literal["ok", "error", "warning"]</code> restricts allowed values.</li>
+<li>Helps prevent bugs by allowing only specific strings.</li>
+<li>If you try another value, static checkers like <code>mypy</code> will raise an error.</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Type Hints Are Static Only</p>
+<p>Python does <strong>not enforce types at runtime</strong>.<br />
+Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy</code> — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   </p>
+</div>
 <hr />
-<h2 id="typed-dicts">Typed Dicts</h2>
-<pre><code class="language-python">from typing import TypedDict
+<h2 id="typed-dicts">Typed Dicts<a class="headerlink" href="#typed-dicts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
 
-class Product(TypedDict):
-    id: int
-    price: float
+<span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
 
-def apply_discount(p: Product) -&gt; float:
-    return p[&quot;price&quot;] * 0.9
-</code></pre>
+<span class="k">def</span> <span class="nf">apply_discount</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Product</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.9</span>
+</code></pre></div>
 <p>???+ note "🔍 What is TypedDict?" - TypedDict allows you to define the structure of a dictionary using class-like syntax. - It’s perfect for describing JSON-like data, where keys and value types are known. - Fields are type-checked with tools like mypy, but at runtime it’s still just a dict.</p>
 <hr />
-<h2 id="namedtuples">NamedTuples</h2>
-<pre><code class="language-python">from typing import NamedTuple
+<h2 id="namedtuples">NamedTuples<a class="headerlink" href="#namedtuples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
 
-class User(NamedTuple):
-    id: int
-    name: str
-</code></pre>
-<p>???+ note "🔍 NamedTuple explained"
-    - Combines tuple immutability with named fields and type hints.
-    - Values are <strong>positionally fixed</strong> and <strong>read-only</strong>.
-    - Supports dot notation: <code>user.name</code>, like an object.</p>
-<p>✅ Example:</p>
-<pre><code class="language-python">user = User(id=1, name=&quot;Alice&quot;)
-print(user.name)  # ➜ Alice
-</code></pre>
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</code></pre></div>
+<details class="note" open="open">
+<summary>🔍 NamedTuple explained</summary>
 <ul>
-<li>🔒 NamedTuples are immutable — you can’t do <code>user.name = "Bob"</code></li>
+<li>Combines tuple immutability with named fields and type hints.</li>
+<li>Values are <strong>positionally fixed</strong> and <strong>read-only</strong>.</li>
+<li>Supports dot notation: <code>user.name</code>, like an object.</li>
 </ul>
+</details>
+<p>✅ Example:
+<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># ➜ Alice</span>
+</code></pre></div>
+- 🔒 NamedTuples are immutable — you can’t do <code>user.name = "Bob"</code></p>
 <hr />
-<h2 id="run-mypy-to-check">Run <code>mypy</code> to Check</h2>
-<p>mypy scan a python file and report any type violations based on annotations (e.g., using TypedDict, List[int], etc.).</p>
-<pre><code class="language-bash">mypy script.py
-</code></pre>
-<ul>
-<li>It analyzes your code without running it.</li>
-<li>It checks if your type hints are correct.</li>
-<li>It helps prevent bugs early by catching issues like missing return types, wrong arguments, etc.</li>
-</ul>
+<h2 id="run-mypy-to-check">Run <code>mypy</code> to Check<a class="headerlink" href="#run-mypy-to-check" title="Permanent link">&para;</a></h2>
+<p>mypy scan a python file and report any type violations based on annotations (e.g., using TypedDict, List[int], etc.).
+<div class="highlight"><pre><span></span><code>mypy<span class="w"> </span>script.py
+</code></pre></div>
+- It analyzes your code without running it.
+- It checks if your type hints are correct.
+- It helps prevent bugs early by catching issues like missing return types, wrong arguments, etc.</p>
 <p>We can add a config file <code>mypy.ini</code> to enforce rules, It tells mypy:</p>
 <ul>
 <li>How strict to be</li>
@@ -737,20 +745,20 @@ print(user.name)  # ➜ Alice
 <li>Whether to treat certain errors as warnings</li>
 <li>Project-specific overrides</li>
 </ul>
-<pre><code class="language-ini">[mypy]
-strict = True                   # Enables all strict checks (recommended!)
-ignore_missing_imports = True   # Don’t fail on 3rd-party libraries with no stubs
-disallow_untyped_defs = True    # Force you to type all function defs
-warn_unused_ignores = True      # Warn if you ignore something unnecessarily
-exclude = tests/                # Don't type-check test files
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">[mypy]</span>
+<span class="na">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">                   </span><span class="c1"># Enables all strict checks (recommended!)</span>
+<span class="na">ignore_missing_imports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">   </span><span class="c1"># Don’t fail on 3rd-party libraries with no stubs</span>
+<span class="na">disallow_untyped_defs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">    </span><span class="c1"># Force you to type all function defs</span>
+<span class="na">warn_unused_ignores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">      </span><span class="c1"># Warn if you ignore something unnecessarily</span>
+<span class="na">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tests/</span><span class="w">                </span><span class="c1"># Don&#39;t type-check test files</span>
+</code></pre></div>
 <hr />
-<h2 id="pydantic-for-data-validation">Pydantic for Data Validation</h2>
+<h2 id="pydantic-for-data-validation">Pydantic for Data Validation<a class="headerlink" href="#pydantic-for-data-validation" title="Permanent link">&para;</a></h2>
 <ul>
 <li>install latest pydantic v2
 <code>pip install pydantic</code></li>
 </ul>
-<h2 id="resources">🔗 Resources</h2>
+<h2 id="resources">🔗 Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://mypy.readthedocs.io/">mypy Documentation</a></li>
 <li><a href="https://peps.python.org/pep-0484/">PEP 484 – Type Hints</a></li>

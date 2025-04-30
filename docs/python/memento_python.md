@@ -1,5 +1,4 @@
-# Memento Python
-# Advanced Python Core 
+# Memento Python 
 
 This memento summarizes some native Python features with structured examples.
 
