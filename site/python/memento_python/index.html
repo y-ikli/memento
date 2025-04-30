@@ -630,6 +630,133 @@
 
 
 <h1 id="memento-python">Memento Python</h1>
+<h1 id="advanced-python-core">Advanced Python Core</h1>
+<p>This memento summarizes some native Python features with structured examples.</p>
+<h1 id="type-hints-static-checking">Type Hints &amp; Static Checking</h1>
+<p>Type hints help document your code and catch bugs early. Combined with tools like <code>mypy</code>, they enable static analysis without running the code.</p>
+<h2 id="basic-type-hints">Basic Type Hints</h2>
+<pre><code class="language-python">def double(x: int) -&gt; int:
+    return x * 2
+
+def greet(name: str) -&gt; str:
+    return f&quot;Hello, {name}&quot;
+</code></pre>
+<hr />
+<h2 id="hints-for-collections">Hints for Collections</h2>
+<pre><code class="language-python">from typing import List, Dict
+
+def total(prices: List[float]) -&gt; float:
+    return sum(prices)
+
+def extract_ids(data: List[Dict[str, int]]) -&gt; List[int]:
+    return [row[&quot;id&quot;] for row in data]
+</code></pre>
+<ul>
+<li>In first example prices are a list of floats.</li>
+<li>In the second example, data is expected to be a list of dictionaries.Each dictionary maps strings to integers 
+This means you expect something like:
+<code>[{"id": 1}, {"id": 2}, {"id": 3}]</code></li>
+</ul>
+<hr />
+<h2 id="optional-union-literal">Optional, Union, Literal</h2>
+<pre><code class="language-python">from typing import Optional, Union, Literal
+
+def maybe_add(a: int, b: Optional[int]) -&gt; int:
+    return a + (b or 0)
+</code></pre>
+<p>???+ note "🔍 maybe_add explained"</p>
+<ul>
+<li>b is optional, meaning it can be int or None (Optional[int])</li>
+<li>If b is None, use 0 instead</li>
+<li>If b is an integer (e.g., 5), use it</li>
+</ul>
+<pre><code class="language-python">def handle_event(type: Union[str, int]) -&gt; None:
+    print(type)
+</code></pre>
+<p>???+ note "🔍 handle_event explained"</p>
+<ul>
+<li>type can be a str or an int</li>
+<li>The function returns nothing (None)</li>
+</ul>
+<pre><code class="language-python">def status_color(status: Literal[&quot;ok&quot;, &quot;error&quot;, &quot;warning&quot;]) -&gt; str:
+    return {&quot;ok&quot;: &quot;green&quot;, &quot;error&quot;: &quot;red&quot;, &quot;warning&quot;: &quot;yellow&quot;}[status]
+</code></pre>
+<p>???+ note "🔍 status_color explained"
+- <code>status: Literal["ok", "error", "warning"]</code> restricts allowed values.
+- Helps prevent bugs by allowing only specific strings.
+- If you try another value, static checkers like <code>mypy</code> will raise an error.</p>
+<p>!!! attention "Type Hints Are Static Only"
+    Python does <strong>not enforce types at runtime</strong>.<br />
+    Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy</code> — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   </p>
+<hr />
+<h2 id="typed-dicts">Typed Dicts</h2>
+<pre><code class="language-python">from typing import TypedDict
+
+class Product(TypedDict):
+    id: int
+    price: float
+
+def apply_discount(p: Product) -&gt; float:
+    return p[&quot;price&quot;] * 0.9
+</code></pre>
+<p>???+ note "🔍 What is TypedDict?" - TypedDict allows you to define the structure of a dictionary using class-like syntax. - It’s perfect for describing JSON-like data, where keys and value types are known. - Fields are type-checked with tools like mypy, but at runtime it’s still just a dict.</p>
+<hr />
+<h2 id="namedtuples">NamedTuples</h2>
+<pre><code class="language-python">from typing import NamedTuple
+
+class User(NamedTuple):
+    id: int
+    name: str
+</code></pre>
+<p>???+ note "🔍 NamedTuple explained"
+    - Combines tuple immutability with named fields and type hints.
+    - Values are <strong>positionally fixed</strong> and <strong>read-only</strong>.
+    - Supports dot notation: <code>user.name</code>, like an object.</p>
+<p>✅ Example:</p>
+<pre><code class="language-python">user = User(id=1, name=&quot;Alice&quot;)
+print(user.name)  # ➜ Alice
+</code></pre>
+<ul>
+<li>🔒 NamedTuples are immutable — you can’t do <code>user.name = "Bob"</code></li>
+</ul>
+<hr />
+<h2 id="run-mypy-to-check">Run <code>mypy</code> to Check</h2>
+<p>mypy scan a python file and report any type violations based on annotations (e.g., using TypedDict, List[int], etc.).</p>
+<pre><code class="language-bash">mypy script.py
+</code></pre>
+<ul>
+<li>It analyzes your code without running it.</li>
+<li>It checks if your type hints are correct.</li>
+<li>It helps prevent bugs early by catching issues like missing return types, wrong arguments, etc.</li>
+</ul>
+<p>We can add a config file <code>mypy.ini</code> to enforce rules, It tells mypy:</p>
+<ul>
+<li>How strict to be</li>
+<li>What files or modules to include/exclude</li>
+<li>Whether to allow missing type hints</li>
+<li>Whether to treat certain errors as warnings</li>
+<li>Project-specific overrides</li>
+</ul>
+<pre><code class="language-ini">[mypy]
+strict = True                   # Enables all strict checks (recommended!)
+ignore_missing_imports = True   # Don’t fail on 3rd-party libraries with no stubs
+disallow_untyped_defs = True    # Force you to type all function defs
+warn_unused_ignores = True      # Warn if you ignore something unnecessarily
+exclude = tests/                # Don't type-check test files
+</code></pre>
+<hr />
+<h2 id="pydantic-for-data-validation">Pydantic for Data Validation</h2>
+<ul>
+<li>install latest pydantic v2
+<code>pip install pydantic</code></li>
+</ul>
+<h2 id="resources">🔗 Resources</h2>
+<ul>
+<li><a href="https://mypy.readthedocs.io/">mypy Documentation</a></li>
+<li><a href="https://peps.python.org/pep-0484/">PEP 484 – Type Hints</a></li>
+<li><a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">Python Typing Cheatsheet</a>
+```</li>
+</ul>
 
 
 

@@ -2,8 +2,21 @@ site_name: Memento Data Engineering
 theme:
   name: material
 
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - admonition
+  - toc:
+      permalink: true
+
 plugins:
   - search
+  - mermaid2
 
 site_url: https://y-ikli.github.io/memento
 
