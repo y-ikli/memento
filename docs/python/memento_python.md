@@ -7,7 +7,7 @@ This memento summarizes some native Python features with structured examples.
 
 Type hints help document your code and catch bugs early. Combined with tools like `mypy`, they enable static analysis without running the code.
 
-### Basic Type Hints
+**Basic Type Hints**
 
 ```python
 def double(x: int) -> int:
@@ -19,7 +19,7 @@ def greet(name: str) -> str:
 
 ---
 
-### Hints for Collections
+**Hints for Collections**
 
 ```python
 from typing import List, Dict
@@ -37,7 +37,7 @@ This means you expect something like:
 `
 ---
 
-### Optional, Union, Literal
+**Optional, Union, Literal**
 
 ```python
 from typing import Optional, Union, Literal
@@ -74,7 +74,7 @@ def status_color(status: Literal["ok", "error", "warning"]) -> str:
     Type hints are for **developers**, IDEs, and tools like `mypy` — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   
 
 ---
-### Some other Special Types
+**Other Special Types**
 
 - `Any`: Indicates that a value can be of any type.
 - `Union[T1, T2, ...]`: Used to indicate that a value can be one of several types.
@@ -83,7 +83,7 @@ def status_color(status: Literal["ok", "error", "warning"]) -> str:
 - `TypeVar`: Used for creating generic types.
 
 ---
-### TypedDict
+## TypedDict
 
 ```python
 from typing import TypedDict
@@ -124,7 +124,7 @@ print(user.name)  # ➜ Alice
 
 ---
 
-## Run `mypy` to Check
+## mypy
 mypy scan a python file and report any type violations based on annotations (e.g., using TypedDict, List[int], etc.).
 ```bash
 mypy script.py
@@ -150,12 +150,11 @@ warn_unused_ignores = True      # Warn if you ignore something unnecessarily
 exclude = tests/                # Don't type-check test files
 ```
 ---
-### Data Validation with Pydantic
 
-Type hints in Python are static — they don’t enforce anything at runtime. In real-world data engineering (APIs, configs, pipelines), we need runtime validation.  
-**Pydantic** is a powerful library that uses Python type hints to enforce data structure and validate inputs at runtime.
+## Pydantic
+Pydantic is a powerful library that uses Python type hints to enforce data structure and validate inputs at runtime.
 
-#### Basic Model
+Basic Model:
 
 ```python
 from pydantic import BaseModel
@@ -179,7 +178,7 @@ print(user.id)  # ➜ 123 (auto-converted to int)
 
 ---
 
-#### Field Constraints
+Field Constraints:
 
 ```python
 from pydantic import BaseModel, Field
@@ -202,7 +201,7 @@ Product(name="A", price=-10)          # ❌ ValidationError
 
 ---
 
-#### Nested Models
+**Nested Models**
 
 ```python
 class Address(BaseModel):
@@ -225,7 +224,7 @@ cust = Customer(name="Bob", address={"city": "Paris", "country": "FR"})
 
 ---
 
-#### Custom Validation
+**Custom Validation**
 
 ```python
 from pydantic import validator
@@ -253,9 +252,9 @@ Event(type="unknown", payload={})     # ❌ ValidationError
 
 ---
 
-### Tools like Pydantic
+**Tools like Pydantic**
 
-Pydantic is powerful, but not alone. We might also consider:
+Pydantic is powerful, but We might also consider:
 
 - `TypedDict` → static-only, no runtime checks
 - `attrs` → high-performance data classes with validation
@@ -263,13 +262,13 @@ Pydantic is powerful, but not alone. We might also consider:
 - `typeguard` → simple runtime type enforcement with decorators
 - `Protobuf` → typed messages for streaming / microservices
 
-- In large-scale data systems, **combine static tools (mypy, pyright)** with **runtime checks (Pydantic or Protobuf)** to catch issues early and enforce safety in production.
+- In large-scale data systems, we combine static tools (mypy, pyright) with runtime checks (Pydantic or Protobuf) to catch issues early and enforce safety in production.
 ---
-### 🔁 Data Contracts with Protobuf
+## Data Contracts with Protobuf
 
 For data engineers working with **microservices**, **streaming**, or **cross-language systems**, **Protocol Buffers (Protobuf)** provide a fast, strongly typed, and schema-first approach to data serialization.
 
-#### What is Protobuf?
+What is Protobuf?
 
 - Defines structured data with `.proto` schema files
 - Generates code in multiple languages (Python, Go, Java…)
@@ -277,7 +276,7 @@ For data engineers working with **microservices**, **streaming**, or **cross-lan
 
 ---
 
-#### Defining a Schema (`.proto`)
+Defining a Schema (`.proto`):
 
 ```proto
 syntax = "proto3";
@@ -295,7 +294,7 @@ message Event {
 
 ---
 
-#### Generating Python Code
+Generating Python Code:
 
 ```bash
 # Install
@@ -309,7 +308,7 @@ This generates a Python class `Event` , we can import and use.
 
 ---
 
-#### Using Generated Code
+Using Generated Code:
 
 ```python
 from event_pb2 import Event
@@ -323,12 +322,12 @@ print(event.SerializeToString())  # ➜ binary format
 
 ---
 
-#### Deserialization
+Deserialization:
 
 ```python
 data = event.SerializeToString()
 ```
-#### On the receiving side
+On the receiving side:
 ```python
 event2 = Event()
 event2.ParseFromString(data)
@@ -355,7 +354,7 @@ print(event2.id)  # ➜ 123
 
 ---
 
-### Python Documentation Generator
+## Python Documentation Generator
 Pyment is a simple tool for generating and enhancing docstrings in Python. It supports multiple formats, including Google, NumPy, and reST. 
 First, install Pyment using `pip`:
 
@@ -376,7 +375,7 @@ You can also generate docstrings for an entire project (all Python files) using 
 `pyment --init --all`
 This command will go through all Python files in the current directory and generate docstrings for functions, methods, and classes.
 
-### match:
+## match:
 match statement: It’s used to match a value (expression) against several patterns.
 
 Patterns: These are conditions that specify what data to match, such as literal values, variable bindings, and complex patterns (like sequences, mappings, or classes).
@@ -411,13 +410,13 @@ def traiter_message(message):
         case _:
             print("Type de message inconnu")
 ```
-### Map and Reduce
+## Map and Reduce
 
 `map()` and `reduce()` are **functional programming tools** in Python that allow concise **transformation** and **aggregation** of data collections.
 
 ---
 
-### 🔹 `map(func, iterable)`
+🔹 `map(func, iterable)`
 
 - Applies a function to **each item** in an iterable.
 - Returns a new iterable (`map` object), often converted to a list.
@@ -435,7 +434,7 @@ squares = list(map(lambda x: x**2, nums))
 print(squares)  # ➜ [1, 4, 9, 16]
 ```
 
-# decorators
+## Decorators
 A decorator is a special type of function in Python that allows you to "decorate" or modify another function (or method) without changing its actual code. It allows you to add functionality to an existing function in a clean, readable way.
 ```python
 def my_decorator(func):
