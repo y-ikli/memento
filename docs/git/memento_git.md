@@ -547,7 +547,7 @@ git merge upstream/main
 
 ---
 
-## 🧠 Tips & Tricks
+## Tips & Tricks
 
 ### Recovering from Mistakes
 
@@ -578,4 +578,5 @@ git commit --amend
 ---
 
 **End of Tutorial**
-last update : 
+
+Last update : 2025-05-03T14:18:10Z
