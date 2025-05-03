@@ -1,4 +1,4 @@
-# Memento Python 
+# Memento Python _ data Engineering
 
 This memento summarizes some native Python features with structured examples.
 
@@ -176,7 +176,6 @@ print(user.id)  # ➜ 123 (auto-converted to int)
 - Converts compatible types (e.g., str ➜ int)
 - Raises clear validation errors on failure
 
----
 
 Field Constraints:
 
@@ -198,8 +197,6 @@ Product(name="A", price=-10)          # ❌ ValidationError
 - `min_length=2`: name must be at least 2 characters
 - `gt=0`: price must be greater than 0
 - `Field(...)`: required with constraints
-
----
 
 **Nested Models**
 
@@ -262,7 +259,6 @@ Pydantic is powerful, but We might also consider:
 - `typeguard` → simple runtime type enforcement with decorators
 - `Protobuf` → typed messages for streaming / microservices
 
-- In large-scale data systems, we combine static tools (mypy, pyright) with runtime checks (Pydantic or Protobuf) to catch issues early and enforce safety in production.
 ---
 ## Data Contracts with Protobuf
 
@@ -421,7 +417,7 @@ def traiter_message(message):
 - Applies a function to **each item** in an iterable.
 - Returns a new iterable (`map` object), often converted to a list.
 
-#### ✅ Example with a Named Function
+Example with a Named Function:
 ```python
 def square(x: int) -> int:
     return x * x
