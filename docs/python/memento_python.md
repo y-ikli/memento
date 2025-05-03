@@ -478,4 +478,6 @@ class MyClass:
         return self._x
 
 ```
+
+Author : Younes IKLI
 Last update : 2025-05-03
