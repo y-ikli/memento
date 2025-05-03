@@ -31,18 +31,19 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
 
-      - name: Update markdown timestamps
+      - name: Update markdown metadata
         run: |
           TODAY=$(date +"%Y-%m-%d")
           for file in $(find docs -name "*.md"); do
-            if grep -q '^Last update :' "$file"; then
-              sed -i "s/^Last update :.*/Last update : $TODAY/" "$file"
-            else
-              echo -e "\nLast update : $TODAY" >> "$file"
-            fi
+            # Remove old metadata lines
+            sed -i '/^Author :/d' "$file"
+            sed -i '/^Last update :/d' "$file"
+
+            # Append fresh metadata
+            echo -e "\nAuthor : Younes IKLI\nLast update : $TODAY" >> "$file"
           done
           git add docs
-          git commit -m "chore: update markdown timestamps [skip ci]" || echo "No changes"
+          git commit -m "chore: update markdown metadata [skip ci]" || echo "No changes"
           git push
 
       - name: Deploy to GitHub Pages
