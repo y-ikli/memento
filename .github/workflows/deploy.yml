@@ -3,12 +3,14 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # or your default branch
+
+permissions:
+  contents: write  # Grants write access to repository contents
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,8 +32,6 @@ jobs:
           git config --global user.name "GitHub Actions"
 
       - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdocs gh-deploy --force --remote-name origin
-
