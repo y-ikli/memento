@@ -40,7 +40,7 @@ jobs:
             sed -i '/^Last update :/d' "$file"
 
             # Append fresh metadata
-            echo -e "\nAuthor : Younes IKLI\nLast update : $TODAY" >> "$file"
+            echo -e "\nAuthor : Younes IKLI  \nLast update : $TODAY" >> "$file"
           done
           git add docs
           git commit -m "chore: update markdown metadata [skip ci]" || echo "No changes"
