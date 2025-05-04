@@ -30,17 +30,17 @@ nav:
   - DBT:
     - Memento DBT: dbt/memento_dbt.md
   - Git:
-      - Memento Git: git/memento_git.md
+    - Memento Git: git/memento_git.md
   - Docker:
-      - Memento Docker: docker/memento_docker.md
+    - Memento Docker: docker/memento_docker.md
   - Kubernetes:
     - Memento Kubernetes: kubernetes/memento_kubernetes.md
   - Pyspark:
-      - Memento Pyspark: pyspark/memento_pyspark.md
+    - Memento Pyspark: pyspark/memento_pyspark.md
   - TDD:
-      - Memento TDD: tdd/memento_tdd.md
+    - Memento TDD: tdd/memento_tdd.md
   - Clean Code:
-      - Memento Clean Code: clean_code/memento_clean_code.md
+    - Memento Clean Code: clean_code/memento_clean_code.md
   - Data Engineering projects:
     
       
