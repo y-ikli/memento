@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://y-ikli.github.io/memento/tdd/memento_pytest/">
+        <link rel="canonical" href="https://y-ikli.github.io/memento/cicd/memento_gitlab_ci/">
       
       
-        <link rel="prev" href="../memento_tdd/">
+        <link rel="prev" href="../../tdd/memento_pytest/">
       
       
-        <link rel="next" href="../../cicd/memento_gitlab_ci/">
+        <link rel="next" href="../memento_github_actions/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Memento pytest - Memento Data Engineering</title>
+        <title>Memento gitlab ci - Memento Data Engineering</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction-to-pytest" class="md-skip">
+        <a href="#introduction-to-gitlab-ci" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memento pytest
+              Memento gitlab ci
             
           </span>
         </div>
@@ -672,19 +672,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -698,7 +696,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             TDD
@@ -712,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memento_tdd/" class="md-nav__link">
+      <a href="../../tdd/memento_tdd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -725,6 +723,71 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tdd/memento_pytest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memento pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ci/CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Ci/CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -744,7 +807,7 @@
           
   
   <span class="md-ellipsis">
-    Memento pytest
+    Memento gitlab ci
   </span>
   
 
@@ -755,7 +818,7 @@
         
   
   <span class="md-ellipsis">
-    Memento pytest
+    Memento gitlab ci
   </span>
   
 
@@ -775,9 +838,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-pytest" class="md-nav__link">
+  <a href="#introduction-to-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction to pytest
+      Introduction to GitLab CI
     </span>
   </a>
   
@@ -793,90 +856,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-pytest-usage" class="md-nav__link">
+  <a href="#understanding-gitlab-ciyml" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic pytest Usage
+      Understanding .gitlab-ci.yml
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-pytest" class="md-nav__link">
+  <a href="#defining-stages-and-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      Running pytest
+      Defining Stages and Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#assertions-in-pytest" class="md-nav__link">
+  <a href="#gitlab-ci-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Assertions in pytest
+      GitLab CI Pipelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixtures" class="md-nav__link">
+  <a href="#running-jobs-and-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Fixtures
+      Running Jobs and Pipelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parametrization" class="md-nav__link">
+  <a href="#gitlab-ci-runners" class="md-nav__link">
     <span class="md-ellipsis">
-      Parametrization
+      GitLab CI Runners
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest-markers" class="md-nav__link">
+  <a href="#variables-and-secrets" class="md-nav__link">
     <span class="md-ellipsis">
-      pytest Markers
+      Variables and Secrets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#handling-test-failures" class="md-nav__link">
+  <a href="#conditional-jobs-and-pipeline-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Handling Test Failures
+      Conditional Jobs and Pipeline Flow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-discovery" class="md-nav__link">
+  <a href="#caching-and-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Discovery
+      Caching and Artifacts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-tests-in-parallel" class="md-nav__link">
+  <a href="#auto-devops" class="md-nav__link">
     <span class="md-ellipsis">
-      Running Tests in Parallel
+      Auto DevOps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest-plugins" class="md-nav__link">
+  <a href="#deployment-with-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
-      pytest Plugins
+      Deployment with GitLab CI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Logs
     </span>
   </a>
   
@@ -900,48 +972,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Ci/CD
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            Ci/CD
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -949,28 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cicd/memento_gitlab_ci/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Memento gitlab ci
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cicd/memento_github_actions/" class="md-nav__link">
+      <a href="../memento_github_actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,9 +1088,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-pytest" class="md-nav__link">
+  <a href="#introduction-to-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction to pytest
+      Introduction to GitLab CI
     </span>
   </a>
   
@@ -1097,90 +1106,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-pytest-usage" class="md-nav__link">
+  <a href="#understanding-gitlab-ciyml" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic pytest Usage
+      Understanding .gitlab-ci.yml
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-pytest" class="md-nav__link">
+  <a href="#defining-stages-and-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      Running pytest
+      Defining Stages and Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#assertions-in-pytest" class="md-nav__link">
+  <a href="#gitlab-ci-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Assertions in pytest
+      GitLab CI Pipelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixtures" class="md-nav__link">
+  <a href="#running-jobs-and-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Fixtures
+      Running Jobs and Pipelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parametrization" class="md-nav__link">
+  <a href="#gitlab-ci-runners" class="md-nav__link">
     <span class="md-ellipsis">
-      Parametrization
+      GitLab CI Runners
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest-markers" class="md-nav__link">
+  <a href="#variables-and-secrets" class="md-nav__link">
     <span class="md-ellipsis">
-      pytest Markers
+      Variables and Secrets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#handling-test-failures" class="md-nav__link">
+  <a href="#conditional-jobs-and-pipeline-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Handling Test Failures
+      Conditional Jobs and Pipeline Flow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-discovery" class="md-nav__link">
+  <a href="#caching-and-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Discovery
+      Caching and Artifacts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-tests-in-parallel" class="md-nav__link">
+  <a href="#auto-devops" class="md-nav__link">
     <span class="md-ellipsis">
-      Running Tests in Parallel
+      Auto DevOps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest-plugins" class="md-nav__link">
+  <a href="#deployment-with-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
-      pytest Plugins
+      Deployment with GitLab CI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Logs
     </span>
   </a>
   
@@ -1210,171 +1228,216 @@
                   
 
 
-  <h1>Memento pytest</h1>
+  <h1>Memento gitlab ci</h1>
 
-<h2 id="introduction-to-pytest">Introduction to pytest<a class="headerlink" href="#introduction-to-pytest" title="Permanent link">&para;</a></h2>
-<p><strong>What is pytest?</strong>
-- <code>pytest</code> is a testing framework for Python that simplifies the process of writing and running tests.
-- It is widely used due to its easy syntax, rich feature set, and powerful plugins.
-- It supports fixtures, parametrization, assertions, and integrates easily with continuous integration (CI) tools.</p>
+<h2 id="introduction-to-gitlab-ci">Introduction to GitLab CI<a class="headerlink" href="#introduction-to-gitlab-ci" title="Permanent link">&para;</a></h2>
+<p><strong>What is GitLab CI?</strong>
+- GitLab CI is a Continuous Integration (CI) and Continuous Delivery (CD) tool built into GitLab.
+- It automates the process of testing, building, and deploying code when changes are made to your GitLab repository.
+- GitLab CI is powered by <code>.gitlab-ci.yml</code> files that define CI/CD pipelines.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p><strong>Before starting, you’ll need:</strong>
-- Basic understanding of Python programming.
-- Installation of <code>pytest</code> (install via <code>pip install pytest</code>).
-- Familiarity with writing basic Python functions and understanding unit tests.</p>
-<h2 id="basic-pytest-usage">Basic pytest Usage<a class="headerlink" href="#basic-pytest-usage" title="Permanent link">&para;</a></h2>
-<p><strong>Writing a Simple Test:</strong>
-- To get started, write a Python function that you want to test.
-- Create a test function using the <code>test_</code> prefix so <code>pytest</code> can identify it as a test.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># math_operations.py</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre></div>
-<p><strong>Creating a Test File:</strong>
-- Create a new file with the prefix <code>test_</code> (e.g., <code>test_math_operations.py</code>).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># test_math_operations.py</span>
-<span class="kn">from</span> <span class="nn">math_operations</span> <span class="kn">import</span> <span class="n">add</span>
+- A GitLab account and access to a repository.
+- Basic knowledge of Git and GitLab.
+- A working GitLab project where you want to set up CI/CD.</p>
+<h2 id="understanding-gitlab-ciyml">Understanding <code>.gitlab-ci.yml</code><a class="headerlink" href="#understanding-gitlab-ciyml" title="Permanent link">&para;</a></h2>
+<p><strong>What is <code>.gitlab-ci.yml</code>?</strong>
+- The <code>.gitlab-ci.yml</code> file defines the structure and behavior of your CI/CD pipelines.
+- It consists of <strong>jobs</strong>, <strong>stages</strong>, and <strong>variables</strong> to customize and control the pipeline execution.</p>
+<p><strong>Structure of <code>.gitlab-ci.yml</code>:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
-</code></pre></div>
+<span class="nt">build_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Building the project...&quot;</span>
+
+<span class="nt">test_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Running tests...&quot;</span>
+
+<span class="nt">deploy_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Deploying the project...&quot;</span>
+</code></pre></div></p>
 <ul>
-<li>Run the tests with <code>pytest</code> by executing the following in the terminal:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>test_math_operations.py
-</code></pre></div></li>
+<li><strong>stages:</strong> Defines the order of the pipeline stages.</li>
+<li><strong>jobs:</strong> Each job runs within a specific stage, defined by <code>stage:</code>.</li>
+<li><strong>script:</strong> The commands to execute in each job.</li>
 </ul>
-<p><strong>Test Output:</strong>
-- Pytest will run the tests and show output indicating whether the test passed or failed.</p>
-<h2 id="running-pytest">Running pytest<a class="headerlink" href="#running-pytest" title="Permanent link">&para;</a></h2>
-<p><strong>Running Tests from the Command Line:</strong>
-- Simply run <code>pytest</code> to find and execute all tests in the current directory and subdirectories.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest
-</code></pre></div>
-<p><strong>Specifying Tests to Run:</strong>
-- You can specify individual tests or files.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>test_math_operations.py::test_add
+<h2 id="defining-stages-and-jobs">Defining Stages and Jobs<a class="headerlink" href="#defining-stages-and-jobs" title="Permanent link">&para;</a></h2>
+<p><strong>Stages:</strong>
+- Stages allow you to organize your pipeline by grouping jobs. Stages run sequentially by default.
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </code></pre></div></p>
-<p><strong>Running Tests with Verbose Output:</strong>
-- Use the <code>-v</code> flag to get more detailed output.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>-v
+<p><strong>Jobs:</strong>
+- Jobs are the units of work in a stage. Each job has a name and runs its defined script.
+<div class="highlight"><pre><span></span><code><span class="nt">build_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Building the project...&quot;</span>
 </code></pre></div></p>
-<h2 id="assertions-in-pytest">Assertions in pytest<a class="headerlink" href="#assertions-in-pytest" title="Permanent link">&para;</a></h2>
-<p><strong>Basic Assertions:</strong>
-- <code>pytest</code> uses Python's built-in <code>assert</code> statement for verifying conditions.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">5</span>
-</code></pre></div>
-<p><strong>Custom Error Messages:</strong>
-- You can add custom error messages to assertions for better debugging.
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 5, but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
-</code></pre></div></p>
-<h2 id="fixtures">Fixtures<a class="headerlink" href="#fixtures" title="Permanent link">&para;</a></h2>
-<p><strong>What Are Fixtures?</strong>
-- Fixtures are used for setting up test environments or initializing data that is shared across multiple tests.</p>
-<p><strong>Creating a Fixture:</strong>
-- Use the <code>@pytest.fixture</code> decorator to define a fixture.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<p><strong>Multiple Jobs in a Stage:</strong>
+- You can define multiple jobs in a stage. Jobs within the same stage run in parallel by default.
+<div class="highlight"><pre><span></span><code><span class="nt">test_job_1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Running test 1...&quot;</span>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">sample_data</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
-</code></pre></div>
-<p><strong>Using Fixtures in Tests:</strong>
-- You can pass fixtures as arguments to test functions.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_name</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">sample_data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;John&quot;</span>
-</code></pre></div>
-<p><strong>Running Tests with Fixtures:</strong>
-- When you run the test, pytest will automatically provide the fixture's return value.</p>
-<h2 id="parametrization">Parametrization<a class="headerlink" href="#parametrization" title="Permanent link">&para;</a></h2>
-<p><strong>What is Parametrization?</strong>
-- Parametrization allows running a single test function with multiple sets of inputs and expected results.</p>
-<p><strong>Using <code>@pytest.mark.parametrize</code>:</strong>
-- You can define multiple sets of parameters for a test function.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="nt">test_job_2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Running test 2...&quot;</span>
+</code></pre></div></p>
+<h2 id="gitlab-ci-pipelines">GitLab CI Pipelines<a class="headerlink" href="#gitlab-ci-pipelines" title="Permanent link">&para;</a></h2>
+<p><strong>Pipeline Execution:</strong>
+- A pipeline is a collection of stages, which are executed in the order defined in the <code>.gitlab-ci.yml</code> file.
+- Each stage runs in parallel with other jobs in the same stage, but stages run sequentially.</p>
+<p><strong>Pipeline Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;a, b, expected&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
-</code></pre></div>
-<ul>
-<li>This will run the <code>test_add</code> three times with different values for <code>a</code>, <code>b</code>, and <code>expected</code>.</li>
-</ul>
-<h2 id="pytest-markers">pytest Markers<a class="headerlink" href="#pytest-markers" title="Permanent link">&para;</a></h2>
-<p><strong>Using Markers for Custom Labels:</strong>
-- Markers are used to label or categorize tests.</p>
-<p><strong>Marking Tests:</strong>
-- Use <code>@pytest.mark.&lt;marker&gt;</code> to assign a marker to a test function.
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="nt">build_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make build</span>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="nt">test_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make test</span>
+
+<span class="nt">deploy_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make deploy</span>
 </code></pre></div></p>
-<p><strong>Running Tests with a Marker:</strong>
-- You can run tests with specific markers using the <code>-m</code> flag.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>-m<span class="w"> </span>slow
-</code></pre></div></p>
-<h2 id="handling-test-failures">Handling Test Failures<a class="headerlink" href="#handling-test-failures" title="Permanent link">&para;</a></h2>
-<p><strong>Handling Expected Failures:</strong>
-- Use <code>@pytest.mark.xfail</code> to mark a test that you expect to fail (it will not count as a failure).</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xfail</span>
-<span class="k">def</span> <span class="nf">test_divide_by_zero</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
+<h2 id="running-jobs-and-pipelines">Running Jobs and Pipelines<a class="headerlink" href="#running-jobs-and-pipelines" title="Permanent link">&para;</a></h2>
+<p><strong>Running Pipelines:</strong>
+- Pipelines are automatically triggered by GitLab CI when code is pushed to the repository.
+- You can manually trigger a pipeline from the GitLab interface or via the API.</p>
+<p><strong>Viewing Pipeline Status:</strong>
+- The GitLab interface provides visual feedback on the pipeline’s progress, with status indicators for each job (e.g., passed, failed, running).</p>
+<h2 id="gitlab-ci-runners">GitLab CI Runners<a class="headerlink" href="#gitlab-ci-runners" title="Permanent link">&para;</a></h2>
+<p><strong>What is a GitLab Runner?</strong>
+- A GitLab Runner is an agent that runs jobs defined in the <code>.gitlab-ci.yml</code> file.
+- GitLab CI can use shared runners (provided by GitLab) or custom runners (configured by you).</p>
+<p><strong>Setting Up a GitLab Runner:</strong>
+- Install a GitLab Runner on your server or use Docker for containerized execution.
+<div class="highlight"><pre><span></span><code><span class="c1"># Install GitLab Runner on Ubuntu</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gitlab-runner
 </code></pre></div>
-<p><strong>Skipping Tests:</strong>
-- Use <code>@pytest.mark.skip</code> to skip tests explicitly.
-<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skip</span>
-<span class="k">def</span> <span class="nf">test_skipped</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+- Register the runner with your GitLab instance.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gitlab-runner<span class="w"> </span>register
 </code></pre></div></p>
-<p><strong>Skipping Tests Based on Conditions:</strong>
-- Use <code>@pytest.mark.skipif</code> to skip tests if a condition is met.
-<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skipif</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Doesn&#39;t work on Windows&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_linux_specific_feature</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
+<h2 id="variables-and-secrets">Variables and Secrets<a class="headerlink" href="#variables-and-secrets" title="Permanent link">&para;</a></h2>
+<p><strong>GitLab CI Variables:</strong>
+- Variables can store sensitive data (e.g., API keys) or general configuration for the pipeline.
+- Define variables in GitLab’s UI or in the <code>.gitlab-ci.yml</code> file.</p>
+<p><strong>Environment Variables in <code>.gitlab-ci.yml</code>:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MY_VAR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some_value&quot;</span>
+
+<span class="nt">job_with_var</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo $MY_VAR</span>
 </code></pre></div></p>
-<h2 id="test-discovery">Test Discovery<a class="headerlink" href="#test-discovery" title="Permanent link">&para;</a></h2>
-<p><strong>Test Discovery:</strong>
-- By default, <code>pytest</code> will automatically discover all files that start with <code>test_</code> and contain functions that begin with <code>test_</code>.</p>
-<p><strong>Changing Test Discovery Rules:</strong>
-- You can change the default test discovery rules using the <code>--python-files</code> and <code>--python-functions</code> options.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>--python-files<span class="o">=</span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span>--python-functions<span class="o">=</span><span class="s2">&quot;check_*&quot;</span>
-</code></pre></div>
-<h2 id="running-tests-in-parallel">Running Tests in Parallel<a class="headerlink" href="#running-tests-in-parallel" title="Permanent link">&para;</a></h2>
-<p><strong>Running Tests in Parallel with <code>pytest-xdist</code>:</strong>
-- You can speed up test execution by running tests in parallel using the <code>pytest-xdist</code> plugin.</p>
-<p><strong>Install the Plugin:</strong>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest-xdist
+<p><strong>Secret Variables:</strong>
+- Secret variables are stored in GitLab and can be referenced in the pipeline but are not visible in the job logs.
+- Add secret variables through the GitLab UI in the repository’s settings.</p>
+<h2 id="conditional-jobs-and-pipeline-flow">Conditional Jobs and Pipeline Flow<a class="headerlink" href="#conditional-jobs-and-pipeline-flow" title="Permanent link">&para;</a></h2>
+<p><strong>Job Dependencies:</strong>
+- You can define dependencies between jobs using <code>needs:</code> to specify which jobs must finish before others can start.
+<div class="highlight"><pre><span></span><code><span class="nt">job1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Building...&quot;</span>
+
+<span class="nt">job2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">job1</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Running tests...&quot;</span>
 </code></pre></div></p>
-<p><strong>Running Tests in Parallel:</strong>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span>
-</code></pre></div>
-- This will run the tests using 4 processes.</p>
-<h2 id="pytest-plugins">pytest Plugins<a class="headerlink" href="#pytest-plugins" title="Permanent link">&para;</a></h2>
-<p><strong>Useful pytest Plugins:</strong>
-- <code>pytest-cov</code>: Provides code coverage reports.
-- <code>pytest-mock</code>: Simplifies mocking in tests.
-- <code>pytest-django</code>: A plugin for testing Django applications.</p>
-<p><strong>Installing Plugins:</strong>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest-cov
+<p><strong>Job Only/Except:</strong>
+- Use <code>only:</code> and <code>except:</code> to define conditions under which jobs run.
+<div class="highlight"><pre><span></span><code><span class="nt">deploy_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Deploying&quot;</span>
+<span class="w">  </span><span class="nt">only</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </code></pre></div></p>
-<p><strong>Using Plugins:</strong>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>your_module<span class="w"> </span>test_your_module.py
+<p><strong>Allow Failure:</strong>
+- You can configure jobs to not fail the pipeline if they fail using <code>allow_failure: true</code>.
+<div class="highlight"><pre><span></span><code><span class="nt">optional_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;This job might fail.&quot;</span>
+<span class="w">  </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div></p>
+<h2 id="caching-and-artifacts">Caching and Artifacts<a class="headerlink" href="#caching-and-artifacts" title="Permanent link">&para;</a></h2>
+<p><strong>Caching:</strong>
+- Use caching to store and reuse data between jobs (e.g., dependencies or build artifacts).
+<div class="highlight"><pre><span></span><code><span class="nt">cache</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node_modules/</span>
+</code></pre></div></p>
+<p><strong>Artifacts:</strong>
+- Artifacts are files generated by a job that you want to keep and pass to other jobs.
+<div class="highlight"><pre><span></span><code><span class="nt">test_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Running tests&quot;</span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage/</span>
+</code></pre></div></p>
+<h2 id="auto-devops">Auto DevOps<a class="headerlink" href="#auto-devops" title="Permanent link">&para;</a></h2>
+<p><strong>What is Auto DevOps?</strong>
+- Auto DevOps is a set of predefined CI/CD templates provided by GitLab to automatically build, test, and deploy applications.
+- It includes steps like build, test, deploy, and monitoring.</p>
+<p><strong>Enabling Auto DevOps:</strong>
+- You can enable Auto DevOps for your project in the GitLab UI under <code>Settings &gt; CI/CD</code>.
+- GitLab will automatically detect the environment (e.g., Node.js, Python) and configure the pipeline accordingly.</p>
+<h2 id="deployment-with-gitlab-ci">Deployment with GitLab CI<a class="headerlink" href="#deployment-with-gitlab-ci" title="Permanent link">&para;</a></h2>
+<p><strong>Deploying to a Remote Server:</strong>
+- You can deploy your application to a remote server via SSH, Docker, Kubernetes, or cloud providers.
+<div class="highlight"><pre><span></span><code><span class="nt">deploy_job</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scp -r ./build/ user@server:/path/to/deploy/</span>
+</code></pre></div></p>
+<p><strong>Deploying with Kubernetes:</strong>
+- GitLab CI can be used to deploy applications to a Kubernetes cluster.
+<div class="highlight"><pre><span></span><code><span class="nt">deploy_k8s</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubectl apply -f kubernetes/deployment.yaml</span>
+</code></pre></div></p>
+<h2 id="monitoring-and-logs">Monitoring and Logs<a class="headerlink" href="#monitoring-and-logs" title="Permanent link">&para;</a></h2>
+<p><strong>Viewing Logs:</strong>
+- GitLab provides detailed logs for each job in a pipeline, which helps in debugging failed jobs.</p>
+<p><strong>Monitoring Pipelines:</strong>
+- You can monitor pipeline performance using the GitLab interface, and integrate external monitoring tools for more advanced insights.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p><strong>Key Takeaways:</strong>
-- <code>pytest</code> simplifies testing by using Python's <code>assert</code> statement and providing rich features like fixtures, parametrization, and plugins.
-- TDD with <code>pytest</code> helps write clean, reliable, and maintainable tests.
-- Pytest’s ability to run tests in parallel and extend functionality with plugins makes it powerful for larger test suites.</p>
+- GitLab CI allows you to automate your testing, building, and deployment workflows.
+- Pipelines are defined in the <code>.gitlab-ci.yml</code> file and can be customized with stages, jobs, variables, and artifacts.
+- GitLab CI supports custom runners, parallel job execution, caching, and integration with external services.</p>
 <p><strong>Next Steps:</strong>
-- Practice writing tests with <code>pytest</code> for your projects.
-- Learn more about advanced <code>pytest</code> features like fixtures, mock testing, and working with external resources.
-- Explore additional <code>pytest</code> plugins to improve your testing workflow.</p>
-<p>Last update : 2025-05-04T19:34:16Z</p>
+- Set up a basic <code>.gitlab-ci.yml</code> file for your project.
+- Explore advanced features like Auto DevOps, Kubernetes deployments, and custom runners.
+- Integrate your GitLab CI pipelines with monitoring and alerting tools to track performance and failures.</p>
+<p>Last update : 2025-05-04T19:41:43Z</p>
 
 
 
