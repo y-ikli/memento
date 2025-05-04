@@ -385,6 +385,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Memento Docker
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -394,6 +405,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Docker Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-managing-docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Managing Docker Containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-managing-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Managing Docker Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Docker Volumes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-using-gitlab-docker-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Using GitLab Docker Registry
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -616,6 +700,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Docker Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-managing-docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Managing Docker Containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-managing-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Managing Docker Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Docker Volumes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-using-gitlab-docker-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Using GitLab Docker Registry
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -630,8 +776,99 @@
 
 
 <h1 id="memento-docker">Memento Docker<a class="headerlink" href="#memento-docker" title="Permanent link">&para;</a></h1>
-<p>Author : Younes IKLI<br />
-Last update : 2025-05-04</p>
+<h2 id="1-basic-docker-commands">1. Basic Docker Commands<a class="headerlink" href="#1-basic-docker-commands" title="Permanent link">&para;</a></h2>
+<p><strong>Check Docker Version</strong><br />
+<code>docker --version</code><br />
+- Displays the installed Docker version.</p>
+<p><strong>Check Docker Info</strong><br />
+<code>docker info</code><br />
+- Displays detailed information about the Docker installation, including container and image counts.</p>
+<p><strong>List All Running Containers</strong><br />
+<code>docker ps</code><br />
+- Lists all currently running containers.</p>
+<p><strong>List All Containers (Including Stopped)</strong><br />
+<code>docker ps -a</code><br />
+- Lists all containers, including those that are stopped.</p>
+<p><strong>List All Docker Images</strong><br />
+<code>docker images</code><br />
+- Displays all Docker images present locally.</p>
+<h2 id="2-managing-docker-containers">2. Managing Docker Containers<a class="headerlink" href="#2-managing-docker-containers" title="Permanent link">&para;</a></h2>
+<p><strong>Run a Container from an Image</strong><br />
+<code>docker run &lt;image-name&gt;</code><br />
+- Runs a container from a specified image.</p>
+<p><strong>Run a Container in Detached Mode</strong><br />
+<code>docker run -d &lt;image-name&gt;</code><br />
+- Runs the container in the background (detached mode).</p>
+<p><strong>Run a Container with Interactive Terminal</strong><br />
+<code>docker run -it &lt;image-name&gt; /bin/bash</code><br />
+- Runs the container with an interactive terminal and opens a bash shell.</p>
+<p><strong>Run a Container with Port Mapping</strong><br />
+<code>docker run -p 8080:80 &lt;image-name&gt;</code><br />
+- Maps port 8080 on the host to port 80 inside the container.</p>
+<p><strong>Stop a Running Container</strong><br />
+<code>docker stop &lt;container-id&gt;</code><br />
+- Stops a running container.</p>
+<p><strong>Start a Stopped Container</strong><br />
+<code>docker start &lt;container-id&gt;</code><br />
+- Starts a container that has been stopped.</p>
+<p><strong>Restart a Container</strong><br />
+<code>docker restart &lt;container-id&gt;</code><br />
+- Restarts a running or stopped container.</p>
+<p><strong>Remove a Container</strong><br />
+<code>docker rm &lt;container-id&gt;</code><br />
+- Removes a stopped container from your system.</p>
+<h2 id="3-managing-docker-images">3. Managing Docker Images<a class="headerlink" href="#3-managing-docker-images" title="Permanent link">&para;</a></h2>
+<p><strong>Pull an Image from Docker Hub</strong><br />
+<code>docker pull &lt;image-name&gt;</code><br />
+- Downloads a Docker image from Docker Hub or another registry.</p>
+<p><strong>Build an Image from a Dockerfile</strong><br />
+<code>docker build -t &lt;image-name&gt; &lt;path&gt;</code><br />
+- Builds a Docker image from the specified Dockerfile located at the given path.</p>
+<p><strong>Tag an Image</strong><br />
+<code>docker tag &lt;image-name&gt; &lt;new-image-name&gt;</code><br />
+- Tags an existing image with a new name.</p>
+<p><strong>Remove an Image</strong><br />
+<code>docker rmi &lt;image-name&gt;</code><br />
+- Removes a Docker image from your local system.</p>
+<h2 id="4-docker-volumes">4. Docker Volumes<a class="headerlink" href="#4-docker-volumes" title="Permanent link">&para;</a></h2>
+<p><strong>List All Volumes</strong><br />
+<code>docker volume ls</code><br />
+- Lists all Docker volumes on your system.</p>
+<p><strong>Create a New Volume</strong><br />
+<code>docker volume create &lt;volume-name&gt;</code><br />
+- Creates a new volume.</p>
+<p><strong>Remove a Volume</strong><br />
+<code>docker volume rm &lt;volume-name&gt;</code><br />
+- Removes a volume from your system.</p>
+<p><strong>Mount a Volume to a Container</strong><br />
+<code>docker run -v &lt;volume-name&gt;:/path/in/container &lt;image-name&gt;</code><br />
+- Mounts a volume to a specific path inside the container.</p>
+<h2 id="5-networking">5. Networking<a class="headerlink" href="#5-networking" title="Permanent link">&para;</a></h2>
+<p><strong>Understanding Docker Networks</strong><br />
+Docker creates default networks (<code>bridge</code>, <code>host</code>, <code>none</code>). List them with:<br />
+<code>docker network ls</code>  </p>
+<p><strong>Create a Custom Network</strong><br />
+<code>docker network create my-network</code><br />
+- Isolate containers for secure communication.  </p>
+<p><strong>Attach a Container to a Network</strong><br />
+<code>docker run -d --name my-nginx --net my-network nginx</code><br />
+- Launches an Nginx container on the custom network.  </p>
+<h2 id="6-using-gitlab-docker-registry">6. Using GitLab Docker Registry<a class="headerlink" href="#6-using-gitlab-docker-registry" title="Permanent link">&para;</a></h2>
+<p><strong>Log in to GitLab Registry</strong><br />
+<code>docker login registry.gitlab.com</code><br />
+- Authenticate with your GitLab credentials or a personal access token.  </p>
+<p><strong>Tag and Push an Image</strong><br />
+<code>docker build -t registry.gitlab.com/your-project/image:tag .</code><br />
+<code>docker push registry.gitlab.com/your-project/image:tag</code><br />
+- Builds and uploads the image to GitLab’s registry.  </p>
+<p><strong>Pull an Image</strong><br />
+<code>docker pull registry.gitlab.com/your-project/image:tag</code><br />
+- Retrieves the image for local use.  </p>
+<p><strong>CI/CD Authentication</strong><br />
+In <code>.gitlab-ci.yml</code>, use:<br />
+<code>docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY</code><br />
+- Automates registry access during pipelines.  </p>
+<p>Last update : 2025-05-04T18:47:58Z</p>
 
 
 
