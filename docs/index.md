@@ -4,8 +4,7 @@ hide:
 ---
 ## About me
 
-![Profile picture](images/photo_younes_gris.JPG){ style="width: 20%; border-radius: 0%;" }
-
+<img src="images/photo_younes_gris.JPG" alt="Profile picture" style="width: 150px; border-radius: 0%;">
 
 
 My journey into technology began in 2007 with a deep fascination for GNU/Linux systems and the philosophy of free and open-source software.
@@ -46,6 +45,7 @@ As an R&D Engineer at the Inria Centre, University of Lille, I design scalable, 
 ---
 
 📫 **Contact Information**
+
 - **Email**: [younes.ikli@gmail.com](mailto:younes.ikli@gmail.com)  
 
 - **Website**: [y-ikli.github.io/memento](https://y-ikli.github.io/memento)  
@@ -55,5 +55,4 @@ As an R&D Engineer at the Inria Centre, University of Lille, I design scalable, 
 ---
 
 
-Author : Younes IKLI  
-Last update : 2025-05-04
+Last update : 2025-05-04T13:35:02Z
