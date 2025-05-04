@@ -5,10 +5,6 @@
          <lastmod>2025-05-04</lastmod>
     </url>
     <url>
-         <loc>https://y-ikli.github.io/memento/Pyspark/memento_pyspark/</loc>
-         <lastmod>2025-05-04</lastmod>
-    </url>
-    <url>
          <loc>https://y-ikli.github.io/memento/clean_code/memento_clean_code/</loc>
          <lastmod>2025-05-04</lastmod>
     </url>
@@ -26,6 +22,10 @@
     </url>
     <url>
          <loc>https://y-ikli.github.io/memento/kubernetes/memento_kubernetes/</loc>
+         <lastmod>2025-05-04</lastmod>
+    </url>
+    <url>
+         <loc>https://y-ikli.github.io/memento/pyspark/memento_pyspark/</loc>
          <lastmod>2025-05-04</lastmod>
     </url>
     <url>
