@@ -72,6 +72,7 @@ Currently, I serve as an **R&D Engineer** at the [Inria Centre at the University
 
 
 
-Author : Younes IKLI  
 
-Last update : 2025-05-04T12:32:07Z
+
+Author : Younes IKLI  
+Last update : 2025-05-04
