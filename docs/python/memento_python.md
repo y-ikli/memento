@@ -225,7 +225,7 @@ match value:
     case _:
         # code for any other case (wildcard)
 ```
-**Why Use match Over if-elif?**
+Why Use match Over if-elif?
 - Readability: match provides a clean, concise way to handle complex data structures and patterns.
 - Flexibility: Supports powerful features like guards, destructuring, and multiple pattern matching.
 - Maintainability: It's easier to extend and modify as the logic is more declarative and expressive than if-elif.
@@ -245,7 +245,7 @@ def traiter_message(message):
 ```
 ## Map and Reduce
 
-`map()` and `reduce()` are **functional programming tools** in Python that allow concise **transformation** and **aggregation** of data collections.
+`map()` and `reduce()` are functional programming tools in Python that allow concise transformation and aggregation of data collections.
 
 ---
 
@@ -318,5 +318,4 @@ class MyClass:
 Author : Younes IKLI  
 
 
-
-Last update : 2025-05-04T16:34:46Z
+Last update : 2025-05-04T17:49:38Z

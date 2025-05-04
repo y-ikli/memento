@@ -4,24 +4,6 @@ This tutorial provides a structured guide to Git, covering basic commands, advan
 
 ---
 
-## 📋 Table of Contents
-
-1. [Basic Setup](#1-basic-setup)
-2. [Initializing & Cloning Repositories](#2-initializing--cloning-repositories)
-3. [Basic Workflow](#3-basic-workflow)
-4. [Branching & Merging](#4-branching--merging)
-5. [Working with Remote Repositories](#5-working-with-remote-repositories)
-6. [Undoing Changes](#6-undoing-changes)
-7. [Stashing Work](#7-stashing-work)
-8. [Rebasing & Fixing Commits](#8-rebasing--fixing-commits)
-9. [Handling Merge Conflicts](#9-handling-merge-conflicts)
-10. [Tags & Releases](#10-tags--releases)
-11. [Inspecting & Debugging](#11-inspecting--debugging)
-12. [Working with Multiple Repositories](#12-working-with-multiple-repositories)
-13. [Practical Use Cases](#13-practical-use-cases)
-
----
-
 ## 1. Basic Setup
 
 Before using Git, configure your name and email:
@@ -41,7 +23,7 @@ git config --list
 
 ## 2. Initializing & Cloning Repositories
 
-### Initialize a New Repository
+**Initialize a New Repository**
 
 ```bash
 git init
@@ -49,7 +31,7 @@ git init
 
 Creates a new Git repository in the current directory.
 
-### Clone an Existing Repository
+**Clone an Existing Repository**
 
 ```bash
 git clone <repository_url>
@@ -61,7 +43,7 @@ Copies a remote repository to your local machine.
 
 ## 3. Basic Workflow
 
-### Check Status
+**Check Status**
 
 ```bash
 git status
@@ -69,14 +51,14 @@ git status
 
 Shows changed files and the current branch.
 
-### Add Changes to Staging
+**Add Changes to Staging**
 
 ```bash
 git add <file>  # Add a specific file
 git add .       # Add all changes
 ```
 
-### Commit Changes
+**Commit Changes**
 
 ```bash
 git commit -m "Commit message"
@@ -84,7 +66,7 @@ git commit -m "Commit message"
 
 Saves changes locally.
 
-### View Commit History
+**View Commit History**
 
 ```bash
 git log --oneline --graph --decorate --all
@@ -94,7 +76,7 @@ git log --oneline --graph --decorate --all
 
 ## 4. Branching & Merging
 
-### Create a New Branch
+**Create a New Branch**
 
 ```bash
 git branch new-feature
@@ -102,19 +84,19 @@ git branch new-feature
 
 Creates a new branch called `new-feature`.
 
-### Switch Branch
+**Switch Branch**
 
 ```bash
 git switch new-feature
 ```
 
 
-### Create and Switch to a New Branch
+**Create and Switch to a New Branch**
 
 ```bash
 git switch -c new-feature
 ```
-### Push the New Branch to the Remote Repository
+**Push the New Branch to the Remote Repository**
 ```bash
 git push -u origin feature-xyz
 ```
@@ -124,7 +106,7 @@ To avoid specifying -u on every push, configure Git to automatically set up trac
 git config --global push.autoSetupRemote always
 ```
 With this configuration, after creating and switching to a new branch, you can simply use git push, and Git will automatically set up the upstream tracking. 
-### Merge Branches
+**Merge Branches**
 
 ```bash
 git switch main
@@ -133,7 +115,7 @@ git merge new-feature
 
 Merges `new-feature` into `main`.
 
-### Delete a Branch
+**Delete a Branch**
 
 ```bash
 git branch -d new-feature
@@ -143,79 +125,75 @@ git branch -d new-feature
 
 ## 5. Working with Remote Repositories
 
-### View Remote Repositories
-
+- View connected remote repositories (e.g., GitHub, GitLab)
 ```bash
 git remote -v
 ```
+This command shows which remote repositories your local repository is connected to. For example, it might show the URL for GitHub or GitLab.
 
-### Fetch Changes from Remote
-
+- Fetch changes from the remote repository without merging
 ```bash
 git fetch
 ```
+The git fetch command retrieves the latest updates from the remote repository but does not merge them into your local branch. It's useful to inspect what has changed on the remote before deciding to merge.
 
-### Pull Changes (Fetch + Merge)
-
+- Pull changes (Fetch + Merge)
 ```bash
 git pull origin main
 ```
+This command is a combination of git fetch and git merge. It fetches the latest updates from the main branch of the remote repository and automatically merges them into your current local branch.
 
-### Push Changes to Remote
-
+- Push changes to the remote repository
 ```bash
 git push origin main
 ```
+The git push command pushes your local commits to the remote repository, making your changes available to others or deploying them.
 
 ---
 
 ## 6. Undoing Changes
 
-### Undo Unstaged Changes
-
-```bash
-git checkout -- <file>
-```
-
-Resets a file to the last committed version.
-
-### Reset Staged Changes
+**Reset Staged Changes**
 
 ```bash
 git reset HEAD <file>
+
 ```
+This command removes a file from the staging area but leaves the changes in the working directory, allowing you to unstage a file without losing any modifications.
 
-Removes file from staging but keeps changes.
-
-### Undo Last Commit (Keep Changes)
+**Undo Last Commit (Keep Changes)**
 
 ```bash
 git reset --soft HEAD~1
-```
 
-### Undo Last Commit (Lose Changes)
+```
+This command undoes the last commit but keeps the changes in your working directory and staging area. It's useful when you want to amend or rework the changes without losing them.
+
+**Undo Last Commit (Lose Changes)**
 
 ```bash
 git reset --hard HEAD~1
+
 ```
+This command completely removes the last commit, including the changes in the working directory. Use it with caution as it will permanently delete the commit and any associated changes.
 
 ---
 
 ## 7. Stashing Work
 
-### Save Uncommitted Changes
+**Save Uncommitted Changes**
 
 ```bash
 git stash
 ```
 
-### List Stashes
+**List Stashes**
 
 ```bash
 git stash list
 ```
 
-### Restore Stashed Changes
+**Restore Stashed Changes**
 
 ```bash
 git stash pop
@@ -225,7 +203,7 @@ git stash pop
 
 ## 8. Rebasing & Fixing Commits
 
-### Rebase a Branch
+**Rebase a Branch**
 
 ```bash
 git switch feature-branch
@@ -234,7 +212,7 @@ git rebase main
 
 Applies `feature-branch` commits on top of `main`.
 
-### Squash Commits (Interactive Rebase)
+**Squash Commits (Interactive Rebase)**
 
 ```bash
 git rebase -i HEAD~3
@@ -242,7 +220,7 @@ git rebase -i HEAD~3
 
 Allows combining commits.
 
-### Amend Last Commit
+**Amend Last Commit**
 
 ```bash
 git commit --amend -m "New commit message"
@@ -277,19 +255,19 @@ When a conflict occurs:
 
 ## 10. Tags & Releases
 
-### Create a Tag
+**Create a Tag**
 
 ```bash
 git tag -a v1.0 -m "Version 1.0"
 ```
 
-### Push Tags to Remote
+**Push Tags to Remote**
 
 ```bash
 git push origin --tags
 ```
 
-### Delete a Tag
+**Delete a Tag**
 
 ```bash
 git tag -d v1.0
@@ -300,19 +278,19 @@ git push origin --delete v1.0
 
 ## 11. Inspecting & Debugging
 
-### Show File Changes in a Commit
+**Show File Changes in a Commit**
 
 ```bash
 git show <commit-hash>
 ```
 
-### See Differences Between Branches
+**See Differences Between Branches**
 
 ```bash
 git diff main feature-branch
 ```
 
-### Blame (Find Who Changed a Line)
+**Blame (Find Who Changed a Line)**
 
 ```bash
 git blame <file>
@@ -320,7 +298,7 @@ git blame <file>
 
 ---
 
-## 12. Working with Multiple Repositories
+**12. Working with Multiple Repositories**
 
 ### Add a New Remote Repository
 
@@ -328,7 +306,7 @@ git blame <file>
 git remote add upstream <repo-url>
 ```
 
-### Fetch and Merge from Another Repository
+**Fetch and Merge from Another Repository**
 
 ```bash
 git fetch upstream
@@ -339,7 +317,7 @@ git merge upstream/main
 
 ## 13. Practical Use Cases
 
-### Collaborative Feature Development
+**Collaborative Feature Development**
 
 **Scenario**: Multiple developers are working on different aspects of a new feature.
 
@@ -421,33 +399,6 @@ git merge upstream/main
 
 ---
 
-### Undoing Changes
-
-**Scenario**: You want to discard changes or reset files.
-
-**Solutions**:
-
-- **Discard Changes in Working Directory**:
-
-  ```bash
-  git checkout -- <file>
-  ```
-
-- **Unstage a File**:
-
-  ```bash
-  git reset HEAD <file>
-  ```
-
-- **Reset to a Previous Commit**:
-
-  ```bash
-  git reset --hard <commit-hash>
-  ```
-
-  *Caution*: This will erase uncommitted changes.
-
----
 
 ### Using Git Tags for Releases
 
@@ -579,15 +530,6 @@ git commit --amend
 
 **End of Tutorial**
 
-
-
-
-
-
-
-
-
-
-
 Author : Younes IKLI  
-Last update : 2025-05-04
+
+Last update : 2025-05-04T17:49:38Z
