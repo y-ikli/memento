@@ -4,75 +4,54 @@ hide:
 ---
 ## About me
 
-![Profile picture](images/photo_younes_gris.JPG){ width="20%" style="border-radius: 0%;" }
+![Profile picture](images/photo_younes_gris.JPG){ style="width: 20%; border-radius: 0%;" }
 
 
 
-My journey into the world of technology began in 2007 with a deep fascination for GNU/Linux systems. Distributions like Debian, Ubuntu, and Fedora, along with Bash scripting and the free softwares philosophy, captivated me and ignited a passion for self-directed learning in this dynamic ecosystem.
+My journey into technology began in 2007 with a deep fascination for GNU/Linux systems and the philosophy of free and open-source software.
 
-Motivated to expand my knowledge, I pursued a rigorous academic path alongside my professional endeavors. I earned:
-- A Bachelor's degree in Mathematics and Computer Science
-- A Master's in Computer Science Education (MEEF)
-- A Master's in Applied Data Science for Healthcare
+Driven to deepen my expertise, I undertook a rigorous academic path while working as a teacher. I earned a Bachelor's degree in Mathematics and Computer Science, a Master's in Computer Science Education (MEEF), and a Master's in Applied Data Science for Healthcare. These studies were complemented by 10 months of internships in data science and engineering, as well as a professional machine learning project in collaboration with CHU Lille and the Clinical Investigation Centre.
 
-These academic achievements, complemented by 10 months of internships focused on data science/engineering and valorization, have equipped me with a robust foundation in data processing and analysis.
+This journey reflects not only my dedication to growth and continuous learning, but also the perseverance, adaptability, and technical curiosity that shape my professional mindset. I bring a strong sense of responsibility and a deep commitment to ethical and impactful work.
 
-## Professional Experience
 
-Currently, I serve as an **R&D Engineer** at the [Inria Centre at the University of Lille](https://www.inria.fr/en), where I contribute to projects centered on decentralized and federated learning. 
+
+### Passion Becomes Profession
+As an R&D Engineer at the Inria Centre, University of Lille, I design scalable, privacy-aware data pipelines for federated learning research.
 
 ---
 
-## 🔧 Technical Skills
+### 🔧 Technical Skills
 
-### Programming Languages
-- **Python**
-- **SQL**
-- **Bash**
-
-### Data Engineering & Processing
-- **Pandas**
-- **PySpark**
-
-### Infrastructure & DevOps
-- **Docker**
-- **GitLab CI**
-
-### Software Development Practices
-- **Git**
-- **Clean Code**
-- **Test-Driven Development (TDD)**
-- **pytest**
-
-### Education & Knowledge Sharing
-- **Technical Pedagogy**
-- **Mentoring**
+**Programming**: Python, SQL, Bash  
+**Data Engineering**: Pandas, PySpark  
+**DevOps**: Docker, GitLab CI  
+**Development Practices**: Git, Clean Code, TDD
 
 ---
 
-## 📚 Currently Enhancing Skills In
-- **Google Cloud Platform (GCP)**: Cloud computing services
-- **dbt (Data Build Tool)**: Data transformation and modeling
-- **Kubernetes**: Container orchestration and management
+### 📚 Currently Expanding Skills In:
+- **Google Cloud Platform (GCP)**
+- **dbt (Data Build Tool)**
+- **Kubernetes**
 
 ---
 
-## 🌟 Personal Attributes
-- **Growth Mindset**: Committed to continuous learning and improvement
-- **Responsibility**: Strong sense of accountability in all endeavors
-- **Confidentiality**: Upholding data privacy and ethical standards
-- **Curiosity**: Constantly exploring new technologies and methodologies
+### 🌟 Core Attributes
+- **Growth Mindset**: Focused on continuous improvement
+- **Responsibility**: Strong commitment to accountability
+- **Confidentiality**: Upholding data privacy and ethics
+- **Curiosity**: Passionate about exploring new technologies
 
 ---
 
 📫 **Contact Information**
-- **Email**: [younes.ikli@gmail.com](mailto:younes.ikli@gmail.com)
-- **Website**: [https://y-ikli.github.io/memento](https://y-ikli.github.io/memento/)
-- **LinkedIn**: [https://www.linkedin.com/in/younes-ikli/](https://www.linkedin.com/in/younes-ikli)
+- **Email**: [younes.ikli@gmail.com](mailto:younes.ikli@gmail.com)  
 
+- **Website**: [y-ikli.github.io/memento](https://y-ikli.github.io/memento)  
 
+- **LinkedIn**: [linkedin.com/in/younes-ikli](https://www.linkedin.com/in/younes-ikli/)
 
+---
 
-
-Author : Younes IKLI  
-Last update : 2025-05-04
+Last update : 2025-05-04T13:03:36Z
