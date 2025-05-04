@@ -2,9 +2,17 @@
 hide:
   - toc
 ---
+## 🗂️ About This Website
+This site serves as both a personal knowledge base — a memento of the technologies and tools I explore — and a portfolio showcasing selected projects I’ve worked on or am currently developing.
+
+It reflects my ongoing learning journey, practical experience, and areas of technical interest, with the goal of deepening my understanding while making useful resources available to others.
+
+Please note: as some of my professional experiences involved sensitive environments where privacy and confidentiality are paramount, no proprietary data, internal resources, or privileged information are shared on this site.
+
+
 ## About me
 
-<img src="images/photo_younes_gris.JPG" alt="Profile picture" style="width: 150px; border-radius: 0%;">
+<img src="images/photo_younes_gris.JPG" alt="Profile picture" style="width: 200px; border-radius: 0%;">
 
 
 My journey into technology began in 2007 with a deep fascination for GNU/Linux systems and the philosophy of free and open-source software.
@@ -56,5 +64,4 @@ As an R&D Engineer at the Inria Centre, University of Lille, I design scalable, 
 
 
 
-Author : Younes IKLI  
-Last update : 2025-05-04
+Last update : 2025-05-04T13:48:40Z
