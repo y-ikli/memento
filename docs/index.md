@@ -11,6 +11,7 @@ Please note: as some of my professional experiences involved sensitive environme
 
 
 ## About me
+**Younes IKLI**
 
 <img src="images/photo_younes_gris.JPG" alt="Profile picture" style="width: 200px; border-radius: 0%;">
 
@@ -63,7 +64,6 @@ As an R&D Engineer at the Inria Centre, University of Lille, I design scalable, 
 ---
 
 
-
-
 Author : Younes IKLI  
-Last update : 2025-05-04
+
+Last update : 2025-05-04T15:05:30Z
