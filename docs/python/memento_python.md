@@ -119,22 +119,6 @@ mypy script.py
 - It checks if your type hints are correct.
 - It helps prevent bugs early by catching issues like missing return types, wrong arguments, etc.
 
-We can add a config file `mypy.ini` to enforce rules, It tells mypy:
-
-- How strict to be
-- What files or modules to include/exclude
-- Whether to allow missing type hints
-- Whether to treat certain errors as warnings
-- Project-specific overrides
-
-```
-[mypy]
-strict = True                   # Enables all strict checks (recommended!)
-ignore_missing_imports = True   # Don’t fail on 3rd-party libraries with no stubs
-disallow_untyped_defs = True    # Force you to type all function defs
-warn_unused_ignores = True      # Warn if you ignore something unnecessarily
-exclude = tests/                # Don't type-check test files
-```
 ---
 
 ## Pydantic
@@ -333,4 +317,5 @@ class MyClass:
 ```
 Author : Younes IKLI  
 
-Last update : 2025-05-04T15:58:50Z
+
+Last update : 2025-05-04T16:02:39Z
