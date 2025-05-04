@@ -1,6 +1,6 @@
 # Memento Python
 
-This memento summarizes some native Python features with structured examples.
+This memento summarizes some native Python features.
 
 
 ## Type Hints & Static Checking
@@ -45,8 +45,6 @@ from typing import Optional, Union, Literal
 def maybe_add(a: int, b: Optional[int]) -> int:
     return a + (b or 0)
 ```
-???+ note 
-
 - b is optional, meaning it can be int or None (Optional[int])
 - If b is None, use 0 instead
 - If b is an integer (e.g., 5), use it
@@ -55,8 +53,6 @@ def maybe_add(a: int, b: Optional[int]) -> int:
 def handle_event(type: Union[str, int]) -> None:
     print(type)
 ```
-???+ note 
-
 - type can be a str or an int
 - The function returns nothing (None)
 
@@ -64,25 +60,20 @@ def handle_event(type: Union[str, int]) -> None:
 def status_color(status: Literal["ok", "error", "warning"]) -> str:
     return {"ok": "green", "error": "red", "warning": "yellow"}[status]
 ```
-???+ note 
 - `status: Literal["ok", "error", "warning"]` restricts allowed values.
 - Helps prevent bugs by allowing only specific strings.
 - If you try another value, static checkers like `mypy` will raise an error.
-
-!!! attention "Type Hints Are Static Only"
-    Python does **not enforce types at runtime**.  
-    Type hints are for **developers**, IDEs, and tools like `mypy` — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   
 
 ---
 **Other Special Types**
 
 - `Any`: Indicates that a value can be of any type.
-- `Union[T1, T2, ...]`: Used to indicate that a value can be one of several types.
-- `Optional[T]`: A shorthand for `Union[T, None]`, meaning the value could be of type `T` or `None`.
 - `Callable[[Arg1Type, Arg2Type], ReturnType]`: Represents a function or any other callable object with the specified argument types and return type.
 - `TypeVar`: Used for creating generic types.
-
 ---
+!!! attention "Type Hints Are Static Only"
+    Python does **not enforce types at runtime**.  
+    Type hints are for **developers**, IDEs, and tools like `mypy` — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   
 ## TypedDict
 
 ```python
@@ -95,8 +86,6 @@ class Product(TypedDict):
 def apply_discount(p: Product) -> float:
     return p["price"] * 0.9
 ```
-
-???+ note 
 - TypedDict allows you to define the structure of a dictionary using class-like syntax. - It’s perfect for describing JSON-like data, where keys and value types are known. - Fields are type-checked with tools like mypy, but at runtime it’s still just a dict.
 
 ---
@@ -109,12 +98,10 @@ class User(NamedTuple):
     id: int
     name: str
 ```
+- Combines tuple immutability with named fields and type hints.
+- Values are **positionally fixed** and **read-only**.
+- Supports dot notation: `user.name`, like an object.
 
-???+ note 
-    - Combines tuple immutability with named fields and type hints.
-    - Values are **positionally fixed** and **read-only**.
-    - Supports dot notation: `user.name`, like an object.
-    
 ✅ Example:
 ```python
 user = User(id=1, name="Alice")
@@ -123,7 +110,6 @@ print(user.name)  # ➜ Alice
 - 🔒 NamedTuples are immutable — you can’t do `user.name = "Bob"`
 
 ---
-
 ## mypy
 mypy scan a python file and report any type violations based on annotations (e.g., using TypedDict, List[int], etc.).
 ```bash
@@ -141,7 +127,7 @@ We can add a config file `mypy.ini` to enforce rules, It tells mypy:
 - Whether to treat certain errors as warnings
 - Project-specific overrides
 
-```ini
+```
 [mypy]
 strict = True                   # Enables all strict checks (recommended!)
 ignore_missing_imports = True   # Don’t fail on 3rd-party libraries with no stubs
@@ -152,7 +138,11 @@ exclude = tests/                # Don't type-check test files
 ---
 
 ## Pydantic
-Pydantic is a powerful library that uses Python type hints to enforce data structure and validate inputs at runtime.
+Pydantic is a library that uses Python type hints to enforce data structure and validate inputs at runtime.
+Why use Pydantic?
+- Enforces types at runtime
+- Converts compatible types (e.g., str ➜ int)
+- Raises clear validation errors on failure
 
 Basic Model:
 
@@ -170,35 +160,33 @@ class User(BaseModel):
 user = User(id="123", name="Alice")
 print(user.id)  # ➜ 123 (auto-converted to int)
 ```
-
-???+ note "Why use Pydantic?"
-- Enforces types at runtime
-- Converts compatible types (e.g., str ➜ int)
-- Raises clear validation errors on failure
-
-
 Field Constraints:
+
+- Field Constraints with Field(...) in Pydantic
+- Use Field(...) to add validation rules on fields — like minimum length or positive values.
+- This helps automatically enforce clean and correct data.
+✅ Example:
 
 ```python
 from pydantic import BaseModel, Field
 
-class Product(BaseModel):
-    name: str = Field(..., min_length=2)
-    price: float = Field(..., gt=0)
+class Product(BaseModel):    
+    name: str = Field(..., min_length=2)  # Name must have at least 2 characters
+    price: float = Field(..., gt=0)       # Price must be greater than 0
 ```
+✅ Valid input
+Product(name="Laptop", price=1000.0)
 
-✅ Example:
-```python
-Product(name="Laptop", price=1000.0)  # ✅ Valid
-Product(name="A", price=-10)          # ❌ ValidationError
-```
+❌ Invalid input (raises ValidationError)
+Product(name="A", price=-10)
 
-???+ note "Field Constraints"
 - `min_length=2`: name must be at least 2 characters
 - `gt=0`: price must be greater than 0
-- `Field(...)`: required with constraints
+- `Field(...)`: required with constraints same as `Field(required=True)`
+
 
 **Nested Models**
+Pydantic models can contain other Pydantic models as fields. This is powerful when working with structured or hierarchical data — like JSON from APIs.
 
 ```python
 class Address(BaseModel):
@@ -214,144 +202,9 @@ class Customer(BaseModel):
 ```python
 cust = Customer(name="Bob", address={"city": "Paris", "country": "FR"})
 ```
-
-???+ note "Nested Models"
-- Nested BaseModels are validated recursively
-- Great for structured data like JSON config or API payloads
-
 ---
-
-**Custom Validation**
-
-```python
-from pydantic import validator
-
-class Event(BaseModel):
-    type: str
-    payload: dict
-
-    @validator("type")
-    def must_be_known(cls, v):
-        if v not in {"click", "view", "purchase"}:
-            raise ValueError("Invalid event type")
-        return v
-```
-
-✅ Example:
-```python
-Event(type="click", payload={})       # ✅
-Event(type="unknown", payload={})     # ❌ ValidationError
-```
-
-???+ note "🔍 Custom Logic"
-- Validators allow custom logic on fields
-- Raise `ValueError` to reject bad input
-
----
-
-**Tools like Pydantic**
-
-Pydantic is powerful, but We might also consider:
-
-- `TypedDict` → static-only, no runtime checks
-- `attrs` → high-performance data classes with validation
-- `marshmallow` → schema-based (de)serialization and validation
-- `typeguard` → simple runtime type enforcement with decorators
-- `Protobuf` → typed messages for streaming / microservices
-
----
-## Data Contracts with Protobuf
-
-For data engineers working with **microservices**, **streaming**, or **cross-language systems**, **Protocol Buffers (Protobuf)** provide a fast, strongly typed, and schema-first approach to data serialization.
-
-What is Protobuf?
-
-- Defines structured data with `.proto` schema files
-- Generates code in multiple languages (Python, Go, Java…)
-- Perfect for APIs, Kafka events, gRPC, and long-term data contracts
-
----
-
-Defining a Schema (`.proto`):
-
-```proto
-syntax = "proto3";
-
-message Event {
-  int64 id = 1;
-  string type = 2;
-  string payload = 3;
-}
-```
-
-- Define message structure
-- Fields have fixed types and unique IDs
-- Supports primitives, enums, nesting, repeated fields, etc.
-
----
-
-Generating Python Code:
-
-```bash
-# Install
-pip install protobuf
-
-# Generate Python classes
-protoc --python_out=. event.proto
-```
-
-This generates a Python class `Event` , we can import and use.
-
----
-
-Using Generated Code:
-
-```python
-from event_pb2 import Event
-
-event = Event(id=123, type="click", payload="{}")
-print(event.type)         # ➜ click
-print(event.SerializeToString())  # ➜ binary format
-```
-
-✅ Example: serialize the event and send it over a socket or Kafka.
-
----
-
-Deserialization:
-
-```python
-data = event.SerializeToString()
-```
-On the receiving side:
-```python
-event2 = Event()
-event2.ParseFromString(data)
-print(event2.id)  # ➜ 123
-```
-
-- We can safely parse and validate the binary payload using the generated schema.
-- If the payload doesn't match, it fails fast.
-
-???+ note "Why Use Protobuf Instead of JSON?"
-- Faster: compact binary format is smaller and faster than JSON
-- Typed: strict field types prevent many bugs
-- Evolvable: supports optional fields and versioning without breaking older clients
-
----
-- Use `mypy-protobuf` to generate `.pyi` stub files for better IDE/type checker support:
-    ```bash
-    pip install mypy-protobuf
-    protoc --python_out=. --mypy_out=. schema.proto
-    ```
-
-- Combine Protobuf messages with Kafka or gRPC for fast, safe communication.
-- Avoid tight coupling: keep `.proto` files in shared versioned repos for teams.
-
----
-
 ## Python Documentation Generator
-Pyment is a simple tool for generating and enhancing docstrings in Python. It supports multiple formats, including Google, NumPy, and reST. 
+`Pyment` is a simple tool for generating and enhancing docstrings in Python. It supports multiple formats, including Google, NumPy, and reST. 
 First, install Pyment using `pip`:
 
 ```bash
@@ -478,15 +331,6 @@ class MyClass:
         return self._x
 
 ```
-
-
-
-
-
-
-
-
-
-
 Author : Younes IKLI  
-Last update : 2025-05-04
+
+Last update : 2025-05-04T15:58:50Z
