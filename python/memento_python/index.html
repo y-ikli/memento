@@ -332,27 +332,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mypy-strict-true-enables-all-strict-checks-recommended-ignore_missing_imports-true-dont-fail-on-3rd-party-libraries-with-no-stubs-disallow_untyped_defs-true-force-you-to-type-all-function-defs-warn_unused_ignores-true-warn-if-you-ignore-something-unnecessarily-exclude-tests-dont-type-check-test-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      [mypy] strict = True # Enables all strict checks (recommended!) ignore_missing_imports = True # Don’t fail on 3rd-party libraries with no stubs disallow_untyped_defs = True # Force you to type all function defs warn_unused_ignores = True # Warn if you ignore something unnecessarily exclude = tests/ # Don&#39;t type-check test files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pydantic" class="md-nav__link">
     <span class="md-ellipsis">
       Pydantic
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-contracts-with-protobuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Contracts with Protobuf
     </span>
   </a>
   
@@ -370,7 +352,7 @@
         <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     <span class="md-ellipsis">
-      match:
+      match
     </span>
   </a>
   
@@ -788,27 +770,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mypy-strict-true-enables-all-strict-checks-recommended-ignore_missing_imports-true-dont-fail-on-3rd-party-libraries-with-no-stubs-disallow_untyped_defs-true-force-you-to-type-all-function-defs-warn_unused_ignores-true-warn-if-you-ignore-something-unnecessarily-exclude-tests-dont-type-check-test-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      [mypy] strict = True # Enables all strict checks (recommended!) ignore_missing_imports = True # Don’t fail on 3rd-party libraries with no stubs disallow_untyped_defs = True # Force you to type all function defs warn_unused_ignores = True # Warn if you ignore something unnecessarily exclude = tests/ # Don&#39;t type-check test files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pydantic" class="md-nav__link">
     <span class="md-ellipsis">
       Pydantic
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-contracts-with-protobuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Contracts with Protobuf
     </span>
   </a>
   
@@ -826,7 +790,7 @@
         <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     <span class="md-ellipsis">
-      match:
+      match
     </span>
   </a>
   
@@ -866,7 +830,7 @@
 
 
 <h1 id="memento-python">Memento Python<a class="headerlink" href="#memento-python" title="Permanent link">&para;</a></h1>
-<p>This memento summarizes some native Python features with structured examples.</p>
+<p>This memento summarizes some native Python features.</p>
 <h2 id="type-hints-static-checking">Type Hints &amp; Static Checking<a class="headerlink" href="#type-hints-static-checking" title="Permanent link">&para;</a></h2>
 <p>Type hints help document your code and catch bugs early. Combined with tools like <code>mypy</code>, they enable static analysis without running the code.</p>
 <p><strong>Basic Type Hints</strong></p>
@@ -892,57 +856,40 @@ This means you expect something like:
 <code>[{"id": 1}, {"id": 2}, {"id": 3}]</code></p>
 <hr />
 <p><strong>Optional, Union, Literal</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Literal</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Literal</span>
 
 <span class="k">def</span> <span class="nf">maybe_add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
-<details class="note" open="open">
-<summary>Note</summary>
-</details>
-<ul>
-<li>b is optional, meaning it can be int or None (Optional[int])</li>
-<li>If b is None, use 0 instead</li>
-<li>If b is an integer (e.g., 5), use it</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">handle_event</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+- b is optional, meaning it can be int or None (Optional[int])
+- If b is None, use 0 instead
+- If b is an integer (e.g., 5), use it</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">handle_event</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
 </code></pre></div>
-<details class="note" open="open">
-<summary>Note</summary>
-</details>
-<ul>
-<li>type can be a str or an int</li>
-<li>The function returns nothing (None)</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;warning&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+- type can be a str or an int
+- The function returns nothing (None)</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;warning&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ok&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;yellow&quot;</span><span class="p">}[</span><span class="n">status</span><span class="p">]</span>
 </code></pre></div>
-<details class="note" open="open">
-<summary>Note</summary>
-</details>
+- <code>status: Literal["ok", "error", "warning"]</code> restricts allowed values.
+- Helps prevent bugs by allowing only specific strings.
+- If you try another value, static checkers like <code>mypy</code> will raise an error.</p>
+<hr />
+<p><strong>Other Special Types</strong></p>
 <ul>
-<li><code>status: Literal["ok", "error", "warning"]</code> restricts allowed values.</li>
-<li>Helps prevent bugs by allowing only specific strings.</li>
-<li>If you try another value, static checkers like <code>mypy</code> will raise an error.</li>
+<li><code>Any</code>: Indicates that a value can be of any type.</li>
+<li><code>Callable[[Arg1Type, Arg2Type], ReturnType]</code>: Represents a function or any other callable object with the specified argument types and return type.</li>
+<li><code>TypeVar</code>: Used for creating generic types.</li>
 </ul>
+<hr />
 <div class="admonition attention">
 <p class="admonition-title">Type Hints Are Static Only</p>
 <p>Python does <strong>not enforce types at runtime</strong>.<br />
 Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy</code> — they make your code safer and more readable but don’t stop bad values at runtime unless you add validation.   </p>
 </div>
-<hr />
-<p><strong>Other Special Types</strong></p>
-<ul>
-<li><code>Any</code>: Indicates that a value can be of any type.</li>
-<li><code>Union[T1, T2, ...]</code>: Used to indicate that a value can be one of several types.</li>
-<li><code>Optional[T]</code>: A shorthand for <code>Union[T, None]</code>, meaning the value could be of type <code>T</code> or <code>None</code>.</li>
-<li><code>Callable[[Arg1Type, Arg2Type], ReturnType]</code>: Represents a function or any other callable object with the specified argument types and return type.</li>
-<li><code>TypeVar</code>: Used for creating generic types.</li>
-</ul>
-<hr />
 <h2 id="typeddict">TypedDict<a class="headerlink" href="#typeddict" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
 
 <span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
     <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
@@ -951,28 +898,18 @@ Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy<
 <span class="k">def</span> <span class="nf">apply_discount</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Product</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.9</span>
 </code></pre></div>
-<details class="note" open="open">
-<summary>Note</summary>
-</details>
-<ul>
-<li>TypedDict allows you to define the structure of a dictionary using class-like syntax. - It’s perfect for describing JSON-like data, where keys and value types are known. - Fields are type-checked with tools like mypy, but at runtime it’s still just a dict.</li>
-</ul>
+- TypedDict allows you to define the structure of a dictionary using class-like syntax. - It’s perfect for describing JSON-like data, where keys and value types are known. - Fields are type-checked with tools like mypy, but at runtime it’s still just a dict.</p>
 <hr />
 <h2 id="namedtuples">NamedTuples<a class="headerlink" href="#namedtuples" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
 
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
     <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 </code></pre></div>
-<details class="note" open="open">
-<summary>Note</summary>
-<ul>
-<li>Combines tuple immutability with named fields and type hints.</li>
-<li>Values are <strong>positionally fixed</strong> and <strong>read-only</strong>.</li>
-<li>Supports dot notation: <code>user.name</code>, like an object.</li>
-</ul>
-</details>
+- Combines tuple immutability with named fields and type hints.
+- Values are <strong>positionally fixed</strong> and <strong>read-only</strong>.
+- Supports dot notation: <code>user.name</code>, like an object.</p>
 <p>✅ Example:
 <div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># ➜ Alice</span>
@@ -986,23 +923,13 @@ Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy<
 - It analyzes your code without running it.
 - It checks if your type hints are correct.
 - It helps prevent bugs early by catching issues like missing return types, wrong arguments, etc.</p>
-<p>We can add a config file <code>mypy.ini</code> to enforce rules, It tells mypy:</p>
-<ul>
-<li>How strict to be</li>
-<li>What files or modules to include/exclude</li>
-<li>Whether to allow missing type hints</li>
-<li>Whether to treat certain errors as warnings</li>
-<li>Project-specific overrides</li>
-</ul>
-<h2 id="mypy-strict-true-enables-all-strict-checks-recommended-ignore_missing_imports-true-dont-fail-on-3rd-party-libraries-with-no-stubs-disallow_untyped_defs-true-force-you-to-type-all-function-defs-warn_unused_ignores-true-warn-if-you-ignore-something-unnecessarily-exclude-tests-dont-type-check-test-files"><div class="highlight"><pre><span></span><code><span class="k">[mypy]</span>
-<span class="na">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">                   </span><span class="c1"># Enables all strict checks (recommended!)</span>
-<span class="na">ignore_missing_imports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">   </span><span class="c1"># Don’t fail on 3rd-party libraries with no stubs</span>
-<span class="na">disallow_untyped_defs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">    </span><span class="c1"># Force you to type all function defs</span>
-<span class="na">warn_unused_ignores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w">      </span><span class="c1"># Warn if you ignore something unnecessarily</span>
-<span class="na">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tests/</span><span class="w">                </span><span class="c1"># Don&#39;t type-check test files</span>
-</code></pre></div><a class="headerlink" href="#mypy-strict-true-enables-all-strict-checks-recommended-ignore_missing_imports-true-dont-fail-on-3rd-party-libraries-with-no-stubs-disallow_untyped_defs-true-force-you-to-type-all-function-defs-warn_unused_ignores-true-warn-if-you-ignore-something-unnecessarily-exclude-tests-dont-type-check-test-files" title="Permanent link">&para;</a></h2>
+<hr />
 <h2 id="pydantic">Pydantic<a class="headerlink" href="#pydantic" title="Permanent link">&para;</a></h2>
-<p>Pydantic is a powerful library that uses Python type hints to enforce data structure and validate inputs at runtime.</p>
+<p>Pydantic is a library that uses Python type hints to enforce data structure and validate inputs at runtime.
+Why use Pydantic?
+- Enforces types at runtime
+- Converts compatible types (e.g., str ➜ int)
+- Raises clear validation errors on failure</p>
 <p>Basic Model:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
@@ -1014,35 +941,31 @@ Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy<
 <p>✅ Example:
 <div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>  <span class="c1"># ➜ 123 (auto-converted to int)</span>
-</code></pre></div></p>
-<details class="note" open="open">
-<summary>Why use Pydantic?</summary>
-</details>
-<ul>
-<li>Enforces types at runtime</li>
-<li>Converts compatible types (e.g., str ➜ int)</li>
-<li>Raises clear validation errors on failure</li>
-</ul>
-<p>Field Constraints:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
-
-<span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
-<p>✅ Example:
-<div class="highlight"><pre><span></span><code><span class="n">Product</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">)</span>  <span class="c1"># ✅ Valid</span>
-<span class="n">Product</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=-</span><span class="mi">10</span><span class="p">)</span>          <span class="c1"># ❌ ValidationError</span>
-</code></pre></div></p>
-<details class="note" open="open">
-<summary>Field Constraints</summary>
-</details>
+Field Constraints:</p>
+<ul>
+<li>Field Constraints with Field(...) in Pydantic</li>
+<li>Use Field(...) to add validation rules on fields — like minimum length or positive values.</li>
+<li>This helps automatically enforce clean and correct data.
+✅ Example:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+
+<span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>    
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Name must have at least 2 characters</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>       <span class="c1"># Price must be greater than 0</span>
+</code></pre></div>
+✅ Valid input
+Product(name="Laptop", price=1000.0)</p>
+<p>❌ Invalid input (raises ValidationError)
+Product(name="A", price=-10)</p>
 <ul>
 <li><code>min_length=2</code>: name must be at least 2 characters</li>
 <li><code>gt=0</code>: price must be greater than 0</li>
-<li><code>Field(...)</code>: required with constraints</li>
+<li><code>Field(...)</code>: required with constraints same as <code>Field(required=True)</code></li>
 </ul>
-<p><strong>Nested Models</strong></p>
+<p><strong>Nested Models</strong>
+Pydantic models can contain other Pydantic models as fields. This is powerful when working with structured or hierarchical data — like JSON from APIs.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">country</span><span class="p">:</span> <span class="nb">str</span>
@@ -1054,127 +977,9 @@ Type hints are for <strong>developers</strong>, IDEs, and tools like <code>mypy<
 <p>✅ Example:
 <div class="highlight"><pre><span></span><code><span class="n">cust</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;FR&quot;</span><span class="p">})</span>
 </code></pre></div></p>
-<details class="note" open="open">
-<summary>Nested Models</summary>
-</details>
-<ul>
-<li>Nested BaseModels are validated recursively</li>
-<li>Great for structured data like JSON config or API payloads</li>
-</ul>
-<hr />
-<p><strong>Custom Validation</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">validator</span>
-
-<span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span>
-
-    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">must_be_known</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span> <span class="s2">&quot;purchase&quot;</span><span class="p">}:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid event type&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">v</span>
-</code></pre></div>
-<p>✅ Example:
-<div class="highlight"><pre><span></span><code><span class="n">Event</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="p">{})</span>       <span class="c1"># ✅</span>
-<span class="n">Event</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="p">{})</span>     <span class="c1"># ❌ ValidationError</span>
-</code></pre></div></p>
-<details class="note" open="open">
-<summary>🔍 Custom Logic</summary>
-</details>
-<ul>
-<li>Validators allow custom logic on fields</li>
-<li>Raise <code>ValueError</code> to reject bad input</li>
-</ul>
-<hr />
-<p><strong>Tools like Pydantic</strong></p>
-<p>Pydantic is powerful, but We might also consider:</p>
-<ul>
-<li><code>TypedDict</code> → static-only, no runtime checks</li>
-<li><code>attrs</code> → high-performance data classes with validation</li>
-<li><code>marshmallow</code> → schema-based (de)serialization and validation</li>
-<li><code>typeguard</code> → simple runtime type enforcement with decorators</li>
-<li><code>Protobuf</code> → typed messages for streaming / microservices</li>
-</ul>
-<hr />
-<h2 id="data-contracts-with-protobuf">Data Contracts with Protobuf<a class="headerlink" href="#data-contracts-with-protobuf" title="Permanent link">&para;</a></h2>
-<p>For data engineers working with <strong>microservices</strong>, <strong>streaming</strong>, or <strong>cross-language systems</strong>, <strong>Protocol Buffers (Protobuf)</strong> provide a fast, strongly typed, and schema-first approach to data serialization.</p>
-<p>What is Protobuf?</p>
-<ul>
-<li>Defines structured data with <code>.proto</code> schema files</li>
-<li>Generates code in multiple languages (Python, Go, Java…)</li>
-<li>Perfect for APIs, Kafka events, gRPC, and long-term data contracts</li>
-</ul>
-<hr />
-<p>Defining a Schema (<code>.proto</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="k">syntax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;proto3&quot;</span><span class="p">;</span>
-
-<span class="kd">message</span><span class="w"> </span><span class="nc">Event</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>Define message structure</li>
-<li>Fields have fixed types and unique IDs</li>
-<li>Supports primitives, enums, nesting, repeated fields, etc.</li>
-</ul>
-<hr />
-<p>Generating Python Code:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install</span>
-pip<span class="w"> </span>install<span class="w"> </span>protobuf
-
-<span class="c1"># Generate Python classes</span>
-protoc<span class="w"> </span>--python_out<span class="o">=</span>.<span class="w"> </span>event.proto
-</code></pre></div>
-<p>This generates a Python class <code>Event</code> , we can import and use.</p>
-<hr />
-<p>Using Generated Code:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">event_pb2</span> <span class="kn">import</span> <span class="n">Event</span>
-
-<span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>         <span class="c1"># ➜ click</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>  <span class="c1"># ➜ binary format</span>
-</code></pre></div>
-<p>✅ Example: serialize the event and send it over a socket or Kafka.</p>
-<hr />
-<p>Deserialization:</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">()</span>
-</code></pre></div>
-On the receiving side:
-<div class="highlight"><pre><span></span><code><span class="n">event2</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
-<span class="n">event2</span><span class="o">.</span><span class="n">ParseFromString</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">event2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>  <span class="c1"># ➜ 123</span>
-</code></pre></div></p>
-<ul>
-<li>We can safely parse and validate the binary payload using the generated schema.</li>
-<li>If the payload doesn't match, it fails fast.</li>
-</ul>
-<details class="note" open="open">
-<summary>Why Use Protobuf Instead of JSON?</summary>
-</details>
-<ul>
-<li>Faster: compact binary format is smaller and faster than JSON</li>
-<li>Typed: strict field types prevent many bugs</li>
-<li>Evolvable: supports optional fields and versioning without breaking older clients</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>Use <code>mypy-protobuf</code> to generate <code>.pyi</code> stub files for better IDE/type checker support:
-    <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mypy-protobuf
-protoc<span class="w"> </span>--python_out<span class="o">=</span>.<span class="w"> </span>--mypy_out<span class="o">=</span>.<span class="w"> </span>schema.proto
-</code></pre></div></p>
-</li>
-<li>
-<p>Combine Protobuf messages with Kafka or gRPC for fast, safe communication.</p>
-</li>
-<li>Avoid tight coupling: keep <code>.proto</code> files in shared versioned repos for teams.</li>
-</ul>
 <hr />
 <h2 id="python-documentation-generator">Python Documentation Generator<a class="headerlink" href="#python-documentation-generator" title="Permanent link">&para;</a></h2>
-<p>Pyment is a simple tool for generating and enhancing docstrings in Python. It supports multiple formats, including Google, NumPy, and reST. 
+<p><code>Pyment</code> is a simple tool for generating and enhancing docstrings in Python. It supports multiple formats, including Google, NumPy, and reST. 
 First, install Pyment using <code>pip</code>:</p>
 <p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pyment
 </code></pre></div>
@@ -1187,7 +992,7 @@ Pyment can also generate docstrings for Python classes.</p>
 You can also generate docstrings for an entire project (all Python files) using Pyment.</p>
 <p><code>pyment --init --all</code>
 This command will go through all Python files in the current directory and generate docstrings for functions, methods, and classes.</p>
-<h2 id="match">match:<a class="headerlink" href="#match" title="Permanent link">&para;</a></h2>
+<h2 id="match">match<a class="headerlink" href="#match" title="Permanent link">&para;</a></h2>
 <p>match statement: It’s used to match a value (expression) against several patterns.</p>
 <p>Patterns: These are conditions that specify what data to match, such as literal values, variable bindings, and complex patterns (like sequences, mappings, or classes).</p>
 <p>Basic Syntax:</p>
@@ -1272,9 +1077,9 @@ The @property decorator turns a method into a read-only property. Instead of cal
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x</span>
-</code></pre></div></p>
-<p>Author : Younes IKLI<br />
-Last update : 2025-05-04</p>
+</code></pre></div>
+Author : Younes IKLI  </p>
+<p>Last update : 2025-05-04T16:34:46Z</p>
 
 
 
