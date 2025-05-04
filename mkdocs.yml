@@ -24,13 +24,24 @@ nav:
   - Accueil: index.md
   - Python:
       - Memento Python: python/memento_python.md
+      - Memento Pandas: python/memento_pandas.md      
+  - SQL:
+    - Memento SQL: sql/memento_sql.md
+  - DBT:
+    - Memento DBT: dbt/memento_dbt.md
   - Git:
       - Memento Git: git/memento_git.md
   - Docker:
       - Memento Docker: docker/memento_docker.md
-  - SQL:
-      - Memento SQL: sql/memento_sql.md
+  - Kubernetes:
+    - Memento Kubernetes: kubernetes/memento_kubernetes.md
+  - Pyspark:
+      - Memento Pyspark: pyspark/memento_pyspark.md
   - TDD:
       - Memento TDD: tdd/memento_tdd.md
   - Clean Code:
       - Memento Clean Code: clean_code/memento_clean_code.md
+  - Data Engineering projects:
+    
+      
+
