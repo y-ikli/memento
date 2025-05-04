@@ -1,6 +1,11 @@
+---
+hide:
+  - toc
+---
 ## About me
 
-![Profile picture](images/photo_younes_gris.JPG){ width="200" style="border-radius: 0%;" }
+![Profile picture](images/photo_younes_gris.JPG){ width="20%" style="border-radius: 0%;" }
+
 
 
 My journey into the world of technology began in 2007 with a deep fascination for GNU/Linux systems. Distributions like Debian, Ubuntu, and Fedora, along with Bash scripting and the free softwares philosophy, captivated me and ignited a passion for self-directed learning in this dynamic ecosystem.
@@ -68,4 +73,5 @@ Currently, I serve as an **R&D Engineer** at the [Inria Centre at the University
 
 
 Author : Younes IKLI  
-Last update : 2025-05-04
+
+Last update : 2025-05-04T12:32:07Z
