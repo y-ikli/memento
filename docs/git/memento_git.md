@@ -398,28 +398,6 @@ git merge upstream/main
    Edit the commit message as desired, then save and exit.
 
 ---
-
-
-### Using Git Tags for Releases
-
-**Scenario**: Marking a specific commit as a release point.
-
-**Solution**:
-
-1. **Create a Tag**:
-
-   ```bash
-   git tag -a v1.0 -m "Release version 1.0"
-   ```
-
-2. **Push Tags to Remote**:
-
-   ```bash
-   git push origin v1.0
-   ```
-
----
-
 ### Cherry-Picking Specific Commits
 
 **Scenario**: Apply a specific commit from one branch to another.
@@ -532,4 +510,5 @@ git commit --amend
 
 Author : Younes IKLI  
 
-Last update : 2025-05-04T17:49:38Z
+
+Last update : 2025-05-04T17:52:52Z
