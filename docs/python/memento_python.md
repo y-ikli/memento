@@ -208,7 +208,7 @@ You can also generate docstrings for an entire project (all Python files) using 
 `pyment --init --all`
 This command will go through all Python files in the current directory and generate docstrings for functions, methods, and classes.
 
-## match:
+## match
 match statement: It’s used to match a value (expression) against several patterns.
 
 Patterns: These are conditions that specify what data to match, such as literal values, variable bindings, and complex patterns (like sequences, mappings, or classes).
@@ -317,5 +317,4 @@ class MyClass:
 ```
 Author : Younes IKLI  
 
-
-Last update : 2025-05-04T16:02:39Z
+Last update : 2025-05-04T16:05:35Z
