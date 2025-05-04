@@ -39,6 +39,10 @@ nav:
     - Memento Pyspark: pyspark/memento_pyspark.md
   - TDD:
     - Memento TDD: tdd/memento_tdd.md
+    - Memento pytest: tdd/memento_pytest.md
+  - Ci/CD:
+    - Memento gitlab ci: cicd/memento_gitlab_ci.md
+    - Memento Github actions: cicd/memento_github_actions.md
   - Clean Code:
     - Memento Clean Code: clean_code/memento_clean_code.md
 

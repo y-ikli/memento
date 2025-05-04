@@ -1,0 +1,251 @@
+## Introduction to GitLab CI
+**What is GitLab CI?**
+- GitLab CI is a Continuous Integration (CI) and Continuous Delivery (CD) tool built into GitLab.
+- It automates the process of testing, building, and deploying code when changes are made to your GitLab repository.
+- GitLab CI is powered by `.gitlab-ci.yml` files that define CI/CD pipelines.
+
+## Prerequisites
+**Before starting, you’ll need:**
+- A GitLab account and access to a repository.
+- Basic knowledge of Git and GitLab.
+- A working GitLab project where you want to set up CI/CD.
+
+## Understanding `.gitlab-ci.yml`
+**What is `.gitlab-ci.yml`?**
+- The `.gitlab-ci.yml` file defines the structure and behavior of your CI/CD pipelines.
+- It consists of **jobs**, **stages**, and **variables** to customize and control the pipeline execution.
+
+**Structure of `.gitlab-ci.yml`:**
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Building the project..."
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the project..."
+```
+
+- **stages:** Defines the order of the pipeline stages.
+- **jobs:** Each job runs within a specific stage, defined by `stage:`.
+- **script:** The commands to execute in each job.
+
+## Defining Stages and Jobs
+**Stages:**
+- Stages allow you to organize your pipeline by grouping jobs. Stages run sequentially by default.
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+```
+
+**Jobs:**
+- Jobs are the units of work in a stage. Each job has a name and runs its defined script.
+```yaml
+build_job:
+  stage: build
+  script:
+    - echo "Building the project..."
+```
+
+**Multiple Jobs in a Stage:**
+- You can define multiple jobs in a stage. Jobs within the same stage run in parallel by default.
+```yaml
+test_job_1:
+  stage: test
+  script:
+    - echo "Running test 1..."
+
+test_job_2:
+  stage: test
+  script:
+    - echo "Running test 2..."
+```
+
+## GitLab CI Pipelines
+**Pipeline Execution:**
+- A pipeline is a collection of stages, which are executed in the order defined in the `.gitlab-ci.yml` file.
+- Each stage runs in parallel with other jobs in the same stage, but stages run sequentially.
+
+**Pipeline Example:**
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - make build
+
+test_job:
+  stage: test
+  script:
+    - make test
+
+deploy_job:
+  stage: deploy
+  script:
+    - make deploy
+```
+
+## Running Jobs and Pipelines
+**Running Pipelines:**
+- Pipelines are automatically triggered by GitLab CI when code is pushed to the repository.
+- You can manually trigger a pipeline from the GitLab interface or via the API.
+
+**Viewing Pipeline Status:**
+- The GitLab interface provides visual feedback on the pipeline’s progress, with status indicators for each job (e.g., passed, failed, running).
+
+## GitLab CI Runners
+**What is a GitLab Runner?**
+- A GitLab Runner is an agent that runs jobs defined in the `.gitlab-ci.yml` file.
+- GitLab CI can use shared runners (provided by GitLab) or custom runners (configured by you).
+
+**Setting Up a GitLab Runner:**
+- Install a GitLab Runner on your server or use Docker for containerized execution.
+```bash
+# Install GitLab Runner on Ubuntu
+$ sudo apt-get install gitlab-runner
+```
+- Register the runner with your GitLab instance.
+```bash
+$ gitlab-runner register
+```
+
+## Variables and Secrets
+**GitLab CI Variables:**
+- Variables can store sensitive data (e.g., API keys) or general configuration for the pipeline.
+- Define variables in GitLab’s UI or in the `.gitlab-ci.yml` file.
+
+**Environment Variables in `.gitlab-ci.yml`:**
+```yaml
+variables:
+  MY_VAR: "some_value"
+
+job_with_var:
+  script:
+    - echo $MY_VAR
+```
+
+**Secret Variables:**
+- Secret variables are stored in GitLab and can be referenced in the pipeline but are not visible in the job logs.
+- Add secret variables through the GitLab UI in the repository’s settings.
+
+## Conditional Jobs and Pipeline Flow
+**Job Dependencies:**
+- You can define dependencies between jobs using `needs:` to specify which jobs must finish before others can start.
+```yaml
+job1:
+  stage: build
+  script:
+    - echo "Building..."
+
+job2:
+  stage: test
+  needs: [job1]
+  script:
+    - echo "Running tests..."
+```
+
+**Job Only/Except:**
+- Use `only:` and `except:` to define conditions under which jobs run.
+```yaml
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying"
+  only:
+    - main
+```
+
+**Allow Failure:**
+- You can configure jobs to not fail the pipeline if they fail using `allow_failure: true`.
+```yaml
+optional_job:
+  script:
+    - echo "This job might fail."
+  allow_failure: true
+```
+
+## Caching and Artifacts
+**Caching:**
+- Use caching to store and reuse data between jobs (e.g., dependencies or build artifacts).
+```yaml
+cache:
+  paths:
+    - node_modules/
+```
+
+**Artifacts:**
+- Artifacts are files generated by a job that you want to keep and pass to other jobs.
+```yaml
+test_job:
+  script:
+    - echo "Running tests"
+  artifacts:
+    paths:
+      - coverage/
+```
+
+## Auto DevOps
+**What is Auto DevOps?**
+- Auto DevOps is a set of predefined CI/CD templates provided by GitLab to automatically build, test, and deploy applications.
+- It includes steps like build, test, deploy, and monitoring.
+
+**Enabling Auto DevOps:**
+- You can enable Auto DevOps for your project in the GitLab UI under `Settings > CI/CD`.
+- GitLab will automatically detect the environment (e.g., Node.js, Python) and configure the pipeline accordingly.
+
+## Deployment with GitLab CI
+**Deploying to a Remote Server:**
+- You can deploy your application to a remote server via SSH, Docker, Kubernetes, or cloud providers.
+```yaml
+deploy_job:
+  stage: deploy
+  script:
+    - scp -r ./build/ user@server:/path/to/deploy/
+```
+
+**Deploying with Kubernetes:**
+- GitLab CI can be used to deploy applications to a Kubernetes cluster.
+```yaml
+deploy_k8s:
+  stage: deploy
+  script:
+    - kubectl apply -f kubernetes/deployment.yaml
+```
+
+## Monitoring and Logs
+**Viewing Logs:**
+- GitLab provides detailed logs for each job in a pipeline, which helps in debugging failed jobs.
+
+**Monitoring Pipelines:**
+- You can monitor pipeline performance using the GitLab interface, and integrate external monitoring tools for more advanced insights.
+
+## Conclusion
+**Key Takeaways:**
+- GitLab CI allows you to automate your testing, building, and deployment workflows.
+- Pipelines are defined in the `.gitlab-ci.yml` file and can be customized with stages, jobs, variables, and artifacts.
+- GitLab CI supports custom runners, parallel job execution, caching, and integration with external services.
+
+**Next Steps:**
+- Set up a basic `.gitlab-ci.yml` file for your project.
+- Explore advanced features like Auto DevOps, Kubernetes deployments, and custom runners.
+- Integrate your GitLab CI pipelines with monitoring and alerting tools to track performance and failures.
+
+Last update : 2025-05-04T19:41:43Z
