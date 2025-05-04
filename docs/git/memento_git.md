@@ -106,6 +106,7 @@ To avoid specifying -u on every push, configure Git to automatically set up trac
 git config --global push.autoSetupRemote always
 ```
 With this configuration, after creating and switching to a new branch, you can simply use git push, and Git will automatically set up the upstream tracking. 
+
 **Merge Branches**
 
 ```bash
@@ -157,7 +158,6 @@ The git push command pushes your local commits to the remote repository, making 
 
 ```bash
 git reset HEAD <file>
-
 ```
 This command removes a file from the staging area but leaves the changes in the working directory, allowing you to unstage a file without losing any modifications.
 
@@ -165,7 +165,6 @@ This command removes a file from the staging area but leaves the changes in the 
 
 ```bash
 git reset --soft HEAD~1
-
 ```
 This command undoes the last commit but keeps the changes in your working directory and staging area. It's useful when you want to amend or rework the changes without losing them.
 
@@ -173,7 +172,6 @@ This command undoes the last commit but keeps the changes in your working direct
 
 ```bash
 git reset --hard HEAD~1
-
 ```
 This command completely removes the last commit, including the changes in the working directory. Use it with caution as it will permanently delete the commit and any associated changes.
 
@@ -510,5 +508,4 @@ git commit --amend
 
 Author : Younes IKLI  
 
-
-Last update : 2025-05-04T17:52:52Z
+Last update : 2025-05-04T17:55:36Z
