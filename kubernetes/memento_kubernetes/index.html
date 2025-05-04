@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction-to-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -588,6 +593,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Memento Kubernetes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -597,6 +613,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-kubernetes-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Kubernetes Cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-a-simple-application-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying a Simple Application on Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exposing-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exposing the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -817,6 +931,95 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-kubernetes-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Kubernetes Cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-a-simple-application-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying a Simple Application on Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exposing-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exposing the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -832,7 +1035,109 @@
 
   <h1>Memento Kubernetes</h1>
 
-<p>Last update : 2025-05-04T19:11:36Z</p>
+<h2 id="introduction-to-kubernetes">Introduction to Kubernetes<a class="headerlink" href="#introduction-to-kubernetes" title="Permanent link">&para;</a></h2>
+<p><strong>What is Kubernetes?</strong>
+- Kubernetes is an open-source platform for automating the deployment, scaling, and management of containerized applications.
+- It groups containers into logical units for easy management and discovery.
+- Kubernetes provides high availability, scalability, and fault tolerance for applications in production.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p><strong>Before starting, you’ll need:</strong>
+- A basic understanding of containers (Docker)
+- Access to a Kubernetes cluster (local or cloud-based)
+- kubectl (Kubernetes command-line tool)
+- A container registry (e.g., Docker Hub)</p>
+<h2 id="setting-up-kubernetes-cluster">Setting Up Kubernetes Cluster<a class="headerlink" href="#setting-up-kubernetes-cluster" title="Permanent link">&para;</a></h2>
+<p><strong>Using Minikube for a Local Cluster:</strong>
+- Minikube allows you to run Kubernetes clusters locally.</p>
+<p><strong>Install Minikube:</strong>
+<div class="highlight"><pre><span></span><code>brew install minikube
+</code></pre></div></p>
+<p><strong>Start the Minikube Cluster:</strong>
+<div class="highlight"><pre><span></span><code>minikube start
+</code></pre></div></p>
+<p><strong>Check Cluster Status:</strong>
+<div class="highlight"><pre><span></span><code>kubectl cluster-info
+</code></pre></div></p>
+<h2 id="deploying-a-simple-application-on-kubernetes">Deploying a Simple Application on Kubernetes<a class="headerlink" href="#deploying-a-simple-application-on-kubernetes" title="Permanent link">&para;</a></h2>
+<p><strong>Create a deployment YAML file:</strong>
+- Example: <code>deployment.yaml</code>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-deployment</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</code></pre></div></p>
+<p><strong>Deploy the application:</strong>
+<div class="highlight"><pre><span></span><code>kubectl apply -f deployment.yaml
+</code></pre></div></p>
+<p><strong>Check the deployment status:</strong>
+<div class="highlight"><pre><span></span><code>kubectl get deployments
+</code></pre></div></p>
+<h2 id="exposing-the-application">Exposing the Application<a class="headerlink" href="#exposing-the-application" title="Permanent link">&para;</a></h2>
+<p><strong>Expose the deployment via a service:</strong>
+- Example: <code>service.yaml</code>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-service</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LoadBalancer</span>
+</code></pre></div></p>
+<p><strong>Create the service:</strong>
+<div class="highlight"><pre><span></span><code>kubectl apply -f service.yaml
+</code></pre></div></p>
+<p><strong>Get the external IP of the service:</strong>
+<div class="highlight"><pre><span></span><code>kubectl get svc nginx-service
+</code></pre></div></p>
+<h2 id="scaling-the-application">Scaling the Application<a class="headerlink" href="#scaling-the-application" title="Permanent link">&para;</a></h2>
+<p><strong>Scale the number of replicas:</strong>
+<div class="highlight"><pre><span></span><code>kubectl scale deployment nginx-deployment --replicas=3
+</code></pre></div></p>
+<p><strong>Verify the new number of pods:</strong>
+<div class="highlight"><pre><span></span><code>kubectl get pods
+</code></pre></div></p>
+<h2 id="updating-the-application">Updating the Application<a class="headerlink" href="#updating-the-application" title="Permanent link">&para;</a></h2>
+<p><strong>Update the deployment with a new image:</strong>
+<div class="highlight"><pre><span></span><code>kubectl set image deployment/nginx-deployment nginx=nginx:latest
+</code></pre></div></p>
+<p><strong>Check if the deployment was updated:</strong>
+<div class="highlight"><pre><span></span><code>kubectl rollout status deployment/nginx-deployment
+</code></pre></div></p>
+<h2 id="deleting-resources">Deleting Resources<a class="headerlink" href="#deleting-resources" title="Permanent link">&para;</a></h2>
+<p><strong>Delete the service and deployment:</strong>
+<div class="highlight"><pre><span></span><code>kubectl delete -f service.yaml
+kubectl delete -f deployment.yaml
+</code></pre></div></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p><strong>Key Takeaways:</strong>
+- Kubernetes helps with managing containerized applications in production with features like scaling, monitoring, and self-healing.
+- The key components include Pods, Deployments, and Services.
+- Kubernetes provides high availability, fault tolerance, and easy scaling.</p>
+<p><strong>Next Steps:</strong>
+- Learn about ConfigMaps and Secrets for managing application configuration.
+- Explore Helm for easier package management in Kubernetes.
+- Experiment with Kubernetes in the cloud (e.g., GKE, EKS, AKS).</p>
+<p>Last update : 2025-05-04T19:26:13Z</p>
 
 
 
